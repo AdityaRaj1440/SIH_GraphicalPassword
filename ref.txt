@@ -1,0 +1,20 @@
+new SimpleImage(filename) 	creates a SimpleImage to represent the image in filename 	new SimpleImage("devil.png") is
+new SimpleImage(width, height) 	creates a SimpleImage whose dimensions are width by height. All the pixels in this image are black (0, 0, 0, 255) 	new SimpleImage(100, 100) is
+new SimpleImage(fileInputElement) 	creates a SimpleImage to represent the image selected by the user using the fileInputElement given from the web page 	var input = document.getElementById("fileLoader");
+var img = new SimpleImage(input); is
+
+assuming the user selected that image from their computer.
+getWidth() 	returns the image's width, or number of pixels in the X direction 	logo.getWidth() is 100
+getHeight() 	returns the image's height, or number of pixels in the Y direction 	logo.getHeight() is 85
+getPixel(x,y) 	returns the pixel in this image at the coordinate (x, y) 	logo.getPixel(0, 0) is the pixel (255, 255, 255, 255)
+setPixel(x,y,pixel) 	copies the RGBA values from the given pixel into pixel at the (x,y) coordinates given 	logo.setPixel(50, 42, pix2) changes the color to white
+setSize(width, height) 	resizes the image to be width by height. The image is scaled to fit into the new dimensions. 	logo.setSize(300, 85) is
+values() 	returns all the pixels in the image, starting in the upper-left corner and moving down to the lower-right corner, providing a way to access each pixel in turn 	
+
+for (var pixel of logo.values()) {
+
+// modify pixel
+
+}
+
+drawTo(canvas)
