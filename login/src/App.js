@@ -1,7 +1,8 @@
 import './App.css';
+import Login from './Login';
 
 const App = () => {
-  return ("Hi");
+  return (<Login />);
 }
  
 export default App;
