@@ -1,19 +1,46 @@
 import React from 'react'
 import { decoy, arr } from './Image'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+
+var pixels = require('image-pixels')
+var getPixels = require('get-image-pixels')
+
+function getGroup(x, y) {
+
+    var img = document.getElementById("prime");
+
+    var image = new SimpleImage(img);
+
+    var w = image.getWidth()
+    var h = image.getHeight()
+    var low = 30
+    var xw = w / low
+    var yh = h / low
+
+    var gx = parseInt((x / low))
+    var gy = parseInt((y / low))
+    gx = (gx === 0) ? 1 : gx
+    gy = (gy === 0) ? 1 : gy
+    console.log("groups: ", gx, gy)
+}
 
 function Regpixel() {
+
+
 
     const [show, setShow] = useState(false)
     const [decoyArr, setDecoy] = useState(decoy)
     const [array, setArray] = useState(arr)
 
+
+
     function getPos() {
-        setShow(true)
+        // setShow(true)
         let pic = document.getElementById("prime")
         //console.log(pic);
         let x = 0;
         let arr = [];
+        let arrG = [];
 
 
         function getMousePosition(canvas, event) {
@@ -33,16 +60,27 @@ function Regpixel() {
                 x++;
                 getMousePosition(pic, e);
             }
-            if (x == 4) {
-                console.log("X: ", arr[0], arr[2], arr[4], arr[6]);
-                console.log("Y: ", arr[1], arr[3], arr[5], arr[7]);
+            if (x === 4) {
+
+                for (var i = 0; i < 7; i += 2) {
+                    getGroup(arr[i], arr[i + 1])
+                }
+                // console.log("X: ", arr[0], arr[2], arr[4], arr[6]);
+                // console.log("Y: ", arr[1], arr[3], arr[5], arr[7]);
 
             }
         });
     }
+    // function getGroup(x, y) {
 
 
+    //      //var { data, width, height } = await pixels('/109666.jpg')
+    //     var pic = document.getElementById("prime")
 
+    //     var data = getPixels(pic) // returns a Uint8Array
+    //     console.log(data)
+    //      //console.log(data, width, height)
+    // }
 
 
     return (
@@ -68,9 +106,15 @@ function Regpixel() {
                 fontSize: "20px"
             }}>
 
-                <button onClick={getPos}>Click to select position on primary image</button>
+                <button onClick={() => {
+                    setShow(true)
+                    setTimeout(() => {
+                        getPos()
+                    }, 400);
+
+                }}>Click to select position on primary image</button>
                 {
-                    !show ? <></> : <><img id="prime" alt="image1" src={`${array[0]}`} /></>
+                    !show ? <></> : <><img id="prime" alt="image1" src='/109666.jpg' /></>
                 }
 
 

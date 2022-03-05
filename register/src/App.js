@@ -1,7 +1,7 @@
 import Register from "./Components/Register"
 import Regpixel from "./Components/Regpixel"
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 const App = () => {
 
   const [gotarr, setGotarr] = useState(false)
@@ -17,6 +17,8 @@ const App = () => {
           <Route path="/regpixel" element={gotarr ? <Regpixel /> : <Navigate to='/register' />} />
         </Routes>
       </Router>
+
+
     </>
   )
 }
