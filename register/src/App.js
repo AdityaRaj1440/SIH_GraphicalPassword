@@ -1,16 +1,24 @@
-import PasswordGenerator from './Components/PasswordGenerator'
-import TextForm from './Components/ColForm'
-const App = () =>
-{
-  return(
+import Register from "./Components/Register"
+import Regpixel from "./Components/Regpixel"
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom"
+import { useState } from "react"
+const App = () => {
+
+  const [gotarr, setGotarr] = useState(false)
+  function gotArrset(set) {
+    setGotarr(set)
+  }
+
+  return (
     <>
-    <h1><center><u>User Registration</u></center></h1>
-    <form>
-      <TextForm />
-      <PasswordGenerator />
-    </form>
+      <Router>
+        <Routes>
+          <Route path="/register" element={<Register fn={setGotarr} />} />
+          <Route path="/regpixel" element={gotarr ? <Regpixel /> : <Navigate to='/register' />} />
+        </Routes>
+      </Router>
     </>
-   )  
+  )
 }
 
 export default App

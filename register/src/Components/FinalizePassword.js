@@ -1,8 +1,25 @@
-import { makeDecoy } from "./Image";
-import {default as URL} from "../Resources/ImageURL";
+import { decoy, arr } from "./Image";
+
+import { default as URL } from "../Resources/ImageURL";
+import { useNavigate } from "react-router-dom"
 // console.log("arr1: ",arr)
-const key= Object.keys(URL)
-const FinalizePassword = () => {
+const key = Object.keys(URL)
+const FinalizePassword = ({ fn }) => {
+
+    // console.log("decoy at finalize", decoy)
+    const navigate = useNavigate()
+    const gotarr = (e) => {
+        e.preventDefault();
+        // console.log("decoy at btn", decoy)
+        if (arr.length === 5) {
+            fn(true)
+            navigate('/regpixel')
+        }
+        else {
+            alert("select five images first")
+        }
+
+    }
 
     // const makeDecoys = () => {
     //     const decoy=[]
@@ -26,7 +43,7 @@ const FinalizePassword = () => {
 
     return (
         <>
-        <button onClick={makeDecoy}>Finalize Password</button>
+            <button onClick={gotarr}>Finalize Password</button>
         </>
     )
 }
