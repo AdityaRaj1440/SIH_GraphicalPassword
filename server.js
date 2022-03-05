@@ -1,8 +1,9 @@
 const express = require('express');
 const cors= require('cors');
 const mongoose = require('mongoose');
-const app= express()
 const userRouter = require('./routes/User')
+
+const app= express()
 require("dotenv").config();
 
 app.use(cors())
@@ -17,8 +18,6 @@ connection.once('open', () => {
 })
 
 app.use('/user',userRouter)
-
-
 
 const port = process.env.PORT || 3000;
 app.listen('3000', () => {
