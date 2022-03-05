@@ -59,6 +59,17 @@ const url = {
        "https://wallpaperaccess.com/thumb/983769.jpg",
        "https://wallpaperaccess.com/thumb/3674774.jpg",
        "https://wallpaperaccess.com/thumb/1186574.jpg"
+   ],
+
+   Fauna: [
+       "https://wallpaperaccess.com/thumb/347962.jpg",
+       "https://wallpaperaccess.com/thumb/515344.jpg",
+       "https://wallpaperaccess.com/thumb/2103093.jpg",
+       "https://wallpaperaccess.com/thumb/3294441.jpg",
+       "https://wallpaperaccess.com/thumb/351796.jpg",
+       "https://wallpaperaccess.com/thumb/106104.jpg",
+       "https://wallpaperaccess.com/thumb/328913.jpg",
+       "https://wallpaperaccess.com/thumb/1174967.jpg"
    ]
 }
 

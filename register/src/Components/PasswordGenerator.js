@@ -1,5 +1,5 @@
 import CatImage from './ImageList'
-
+import FinalizePassword from './FinalizePassword'
 const PasswordGenerator = () => {    
     return (
         <>
@@ -14,7 +14,9 @@ const PasswordGenerator = () => {
         <br/><br/>
         <CatImage cat= "Animations" />
         <br/><br/>
-        <button>Finalize Password</button>
+        <CatImage cat= "Fauna" />
+        <br/><br/>
+        <FinalizePassword />
         </div>
         </>
     )
