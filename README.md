@@ -1,1 +1,1 @@
-# SIH_GraphicalPassword
+# SIH_GraphicalPasswordAuthentication
