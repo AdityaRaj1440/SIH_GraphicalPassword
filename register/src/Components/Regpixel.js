@@ -1,19 +1,23 @@
 import React from 'react'
 import { decoy, arr } from './Image'
+
 import { useState, useEffect } from 'react'
 
-var pixels = require('image-pixels')
-var getPixels = require('get-image-pixels')
+let arrG = []
+let arrG2 = []
 
-function getGroup(x, y) {
+function getGroup(x, y, array) {
+    var url = arr[0]
+    const corsImageModified = new Image();
+    corsImageModified.crossOrigin = "Anonymous";
+    corsImageModified.src = url + "?not-from-cache-please";
+    // var img = document.getElementById("prime");
 
-    var img = document.getElementById("prime");
-
-    var image = new SimpleImage(img);
+    const image = new SimpleImage(corsImageModified);
 
     var w = image.getWidth()
     var h = image.getHeight()
-    var low = 30
+    var low = 60
     var xw = w / low
     var yh = h / low
 
@@ -22,7 +26,12 @@ function getGroup(x, y) {
     gx = (gx === 0) ? 1 : gx
     gy = (gy === 0) ? 1 : gy
     console.log("groups: ", gx, gy)
+    array.push(gx)
+    array.push(gy)
+
 }
+
+
 
 function Regpixel() {
 
@@ -39,8 +48,10 @@ function Regpixel() {
         let pic = document.getElementById("prime")
         //console.log(pic);
         let x = 0;
+        let y = 0;
         let arr = [];
-        let arrG = [];
+        let arr2 = [];
+
 
 
         function getMousePosition(canvas, event) {
@@ -54,6 +65,17 @@ function Regpixel() {
                 "Coordinate y: " + y);
         }
 
+        function getMousePosition2(canvas, event) {
+            let rect = canvas.getBoundingClientRect();
+            //console.log("x y", event.clientX, event.clientY)
+            let x = (event.clientX - rect.left) * (1920 / 600);
+            let y = (event.clientY - rect.top) * (1080 / 400);
+            arr2.push(x);
+            arr2.push(y);
+            console.log("Coordinate x: " + x,
+                "Coordinate y: " + y);
+        }
+
 
         pic.addEventListener("mousedown", (e) => {
             if (x < 4) {
@@ -63,10 +85,38 @@ function Regpixel() {
             if (x === 4) {
 
                 for (var i = 0; i < 7; i += 2) {
-                    getGroup(arr[i], arr[i + 1])
+                    getGroup(arr[i], arr[i + 1], arrG)
                 }
-                // console.log("X: ", arr[0], arr[2], arr[4], arr[6]);
-                // console.log("Y: ", arr[1], arr[3], arr[5], arr[7]);
+                x++
+                alert("reselect pixel positions to confirm password")
+
+            }
+            if (x === 5) {
+                if (y < 4) {
+                    y++
+                    getMousePosition2(pic, e)
+                }
+                if (y === 4) {
+                    for (var i = 0; i < 7; i += 2) {
+                        getGroup(arr2[i], arr2[i + 1], arrG2)
+                    }
+                    y++
+                }
+                if (y === 5) {
+                    for (var i = 0; i < 8; i += 1) {
+                        if (arrG[i] !== arrG2[i]) {
+                            arr = []
+                            x = 0
+                            arr2 = []
+                            y = 0
+                            alert("pixel positions do not match previous attempt")
+                            break
+                        }
+                    }
+                    for (var i = 0; i < 7; i += 2) {
+                        console.log("final groups: ", arrG[i], arrG[i + 1])
+                    }
+                }
 
             }
         });
@@ -114,7 +164,7 @@ function Regpixel() {
 
                 }}>Click to select position on primary image</button>
                 {
-                    !show ? <></> : <><img id="prime" alt="image1" src='/109666.jpg' /></>
+                    !show ? <></> : <><img id="prime" alt="image1" src={`${arr[0]}`} /></>
                 }
 
 
