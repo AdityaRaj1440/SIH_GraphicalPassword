@@ -31,3 +31,7 @@ code {
 img {
   border: 2px solid;
 }
+
+.imgSelected{border: 2px solid greenyellow;
+  box-shadow: 0px 10px lightblue;
+}
