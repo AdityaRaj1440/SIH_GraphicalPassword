@@ -31,6 +31,34 @@ const url = {
        "https://wallpaperaccess.com/thumb/782445.jpg",
        "https://wallpaperaccess.com/thumb/1519324.jpg",
        "https://wallpaperaccess.com/thumb/304812.jpg"
+   ],
+
+   Sceneries: [
+       "https://wallpaperaccess.com/thumb/1283968.jpg",
+       "https://wallpaperaccess.com/thumb/1444337.jpg",
+       "https://wallpaperaccess.com/thumb/1231662.jpg",
+       "https://wallpaperaccess.com/thumb/3390090.jpg",
+       "https://wallpaperaccess.com/thumb/283131.jpg",
+       "https://wallpaperaccess.com/thumb/6944340.jpg",
+       "https://wallpaperaccess.com/thumb/253668.jpg",
+       "https://wallpaperaccess.com/thumb/123543.jpg",
+       "https://wallpaperaccess.com/thumb/296104.jpg",
+       "https://wallpaperaccess.com/thumb/1566063.jpg"
+   ],
+
+   Animations: [
+       "https://wallpaperaccess.com/thumb/7731869.jpg",
+       "https://wallpaperaccess.com/thumb/36626.jpg",
+       "https://wallpaperaccess.com/thumb/1097651.jpg",
+       "https://wallpaperaccess.com/thumb/4156393.jpg",
+       "https://wallpaperaccess.com/thumb/6355004.jpg",
+       "https://wallpaperaccess.com/thumb/1371933.jpg",
+       "https://wallpaperaccess.com/thumb/1657425.jpg",
+       "https://wallpaperaccess.com/thumb/4246320.jpg",
+       "https://wallpaperaccess.com/thumb/1334585.jpg",
+       "https://wallpaperaccess.com/thumb/983769.jpg",
+       "https://wallpaperaccess.com/thumb/3674774.jpg",
+       "https://wallpaperaccess.com/thumb/1186574.jpg"
    ]
 }
 

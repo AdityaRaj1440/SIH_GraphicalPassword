@@ -7,9 +7,11 @@ const CatImage = ({cat}) => {
     const URL= url[cat]
     const [src, setSrc]= useState(0)
 
+    
+    
     return (
         <>
-        <h3>{cat}</h3>
+        <h3 align= "center">{cat}</h3>
         <div>
           &nbsp;&nbsp;&nbsp;&nbsp;
           <Image url= {URL[src%len]} />
@@ -22,6 +24,7 @@ const CatImage = ({cat}) => {
         <div align="CENTER">
         <button type="button" onClick={() =>setSrc(src+6)}>Show More</button>
         </div>
+       
         </>
     )
 

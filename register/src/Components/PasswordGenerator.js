@@ -9,6 +9,12 @@ const PasswordGenerator = () => {
         <CatImage cat= "Movies" />
         <br/><br/>
         <CatImage cat= "Series"/>
+        <br/><br/>
+        <CatImage cat= "Sceneries" />
+        <br/><br/>
+        <CatImage cat= "Animations" />
+        <br/><br/>
+        <button>Finalize Password</button>
         </div>
         </>
     )
