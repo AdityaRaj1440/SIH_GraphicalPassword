@@ -2,6 +2,8 @@ import { useState } from "react";
 import React from "react";
 import ImageGrid from "./ImageGrid";
 import Stack from '@mui/material/Stack';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { useNavigate } from "react-router-dom";
 
@@ -17,9 +19,12 @@ const Login = () => {
 
     return (
         <div className="App">
-            <h1>Login</h1>
-            <h3>Enter your username</h3>
-            <input type="text"
+            <h1>LOGIN</h1>
+            <h1>Enter your username:</h1>
+            <TextField style={{
+                margin:15 
+            }}
+            id="outlined-basic" label="Outlined" variant="outlined" type="text"
                 onChange={(e) => {
                     setUsername(e.target.value)
                 }} />

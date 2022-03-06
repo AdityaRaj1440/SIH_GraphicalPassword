@@ -1,11 +1,13 @@
 import * as React from 'react';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
 import './App.css';
 
 export default function ImageGrid() {
     return (
-    <div>
+    <div className="App">
         <ImageList sx={{
             width: 500,
             //  height: 450

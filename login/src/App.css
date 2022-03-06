@@ -8,13 +8,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-}
-.ImageGrid {
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  font-family: 'Poppins', sans-serif;
 }
 
 .App-logo {
