@@ -12,4 +12,5 @@ What we need to do:
 6. generate randomized images for selection
 
 Dependencies:
- npm install @mui/icons-material
+npm install @mui/icons-material
+npm install react-router-dom@6

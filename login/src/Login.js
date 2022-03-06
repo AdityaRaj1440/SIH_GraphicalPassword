@@ -1,13 +1,18 @@
 import { useState } from "react";
 import React from "react";
 import ImageGrid from "./ImageGrid";
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
+import { useNavigate } from "react-router-dom";
+
 
 const Login = () => {
     const [username, setUsername] = useState("")
+    const navigate = useNavigate();
 
     const submit = () => {
         console.log(username)
-        setUsername("")
+        navigate("/login")
     }
 
     return (
@@ -18,9 +23,9 @@ const Login = () => {
                 onChange={(e) => {
                     setUsername(e.target.value)
                 }} />
-            <h3>Select your first Image</h3>
-            <ImageGrid />
-            <button onClick={submit}>Submit</button>
+            {/* <h3>Select your first Image</h3>
+            <ImageGrid /> */}
+            <Button variant="contained" onClick={submit}>Submit</Button>
         </div>
     );
 }

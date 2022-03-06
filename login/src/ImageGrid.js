@@ -1,9 +1,11 @@
 import * as React from 'react';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
+import './App.css';
 
 export default function ImageGrid() {
     return (
+    <div>
         <ImageList sx={{
             width: 500,
             //  height: 450
@@ -22,6 +24,8 @@ export default function ImageGrid() {
                 </ImageListItem>
             ))}
         </ImageList>
+    </div>
+        
     );
 }
 
