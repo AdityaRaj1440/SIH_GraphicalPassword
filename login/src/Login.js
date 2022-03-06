@@ -18,6 +18,7 @@ const Login = () => {
                 onChange={(e) => {
                     setUsername(e.target.value)
                 }} />
+            <h3>Select your first Image</h3>
             <ImageGrid />
             <button onClick={submit}>Submit</button>
         </div>
