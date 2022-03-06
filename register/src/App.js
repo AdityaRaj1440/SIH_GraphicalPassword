@@ -1,13 +1,11 @@
 import Register from "./Components/Register"
 import Regpixel from "./Components/Regpixel"
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom"
-import { useState, useEffect } from "react"
+import { useState } from "react"
 const App = () => {
 
   const [gotarr, setGotarr] = useState(false)
-  function gotArrset(set) {
-    setGotarr(set)
-  }
+
 
   return (
     <>

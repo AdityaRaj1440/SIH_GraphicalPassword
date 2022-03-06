@@ -1,12 +1,9 @@
 import CatImage from './ImageList'
 import FinalizePassword from './FinalizePassword'
-import { useState } from 'react'
+
 const PasswordGenerator = ({ fn }) => {
 
-    // const [arr, setArr] = useState([])
-    // function arrSet(arr) {
-    //     setArr(arr)
-    // }
+
     return (
         <>
             <div>

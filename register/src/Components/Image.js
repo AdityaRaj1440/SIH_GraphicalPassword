@@ -95,11 +95,11 @@ const makeDecoy = () => {
     console.log("decoy length:", decoy)
     // fn(decoy)
 
-    return (
-        <>
-            <h2>{decoy.length}</h2>
-        </>
-    )
+    // return (
+    //     <>
+    //         <h2>{decoy.length}</h2>
+    //     </>
+    // )
 }
 export default Image;
 export { decoy, arr }

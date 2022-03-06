@@ -1,4 +1,4 @@
-import { decoy, arr } from "./Image";
+import { arr } from "./Image";
 
 import { default as URL } from "../Resources/ImageURL";
 import { useNavigate } from "react-router-dom"
