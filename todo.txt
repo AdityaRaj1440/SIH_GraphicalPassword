@@ -10,3 +10,6 @@ What we need to do:
 4. redirect to grid image once a given number of images (5) have been selected
 5. arrange the 5 images in correct order (drag/drop functionality)
 6. generate randomized images for selection
+
+Dependencies:
+ npm install @mui/icons-material
