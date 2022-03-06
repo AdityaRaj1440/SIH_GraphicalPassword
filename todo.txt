@@ -1,0 +1,12 @@
+Concerns regarding implementation: 
+1. How to maintain image variation for recognizability?
+2. How to reduce time for logging in?
+3. How to increase accessibility for disabled users/maintain simplicity?
+
+What we need to do:
+1. generate routes for navigation 
+2. shuffle hardcoded array for randomized display
+3. keep a state of selected images (image onselect & highlight)
+4. redirect to grid image once a given number of images (5) have been selected
+5. arrange the 5 images in correct order (drag/drop functionality)
+6. generate randomized images for selection
