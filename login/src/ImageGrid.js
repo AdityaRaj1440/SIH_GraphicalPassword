@@ -4,8 +4,19 @@ import ImageListItem from '@mui/material/ImageListItem';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import './App.css';
+import { useNavigate } from 'react-router-dom';
+import Button from '@mui/material/Button';
+import { useState } from 'react';
+
 
 export default function ImageGrid() {
+    const [selected, setSelected] = useState();
+    const navigate = useNavigate()
+    const submit = () => {
+        return (
+            navigate("/")
+        )
+    }
     return (
     <div className="App">
         <ImageList sx={{
@@ -18,14 +29,17 @@ export default function ImageGrid() {
             {itemData.map((item) => (
                 <ImageListItem key={item.img}>
                     <img
+                        // className={index === selected ? "selected" : ""}
                         src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
                         srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
                         alt={item.title}
                         loading="lazy"
+                        // onClick={() => setSelected(index)}
                     />
                 </ImageListItem>
             ))}
         </ImageList>
+        <Button variant="contained" onClick={submit}>Reset to Login</Button>
     </div>
         
     );

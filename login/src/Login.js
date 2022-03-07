@@ -21,16 +21,16 @@ const Login = () => {
         <div className="App">
             <h1>LOGIN</h1>
             <h1>Enter your username:</h1>
-            <TextField style={{
-                margin:15 
-            }}
-            id="outlined-basic" label="Outlined" variant="outlined" type="text"
+            <TextField 
+            id="outlined-basic" label="Username" variant="outlined" type="text"
                 onChange={(e) => {
                     setUsername(e.target.value)
                 }} />
-            {/* <h3>Select your first Image</h3>
-            <ImageGrid /> */}
-            <Button variant="contained" onClick={submit}>Submit</Button>
+           
+            <Button style={{
+                margin:15
+            }}
+            variant="contained" onClick={submit}>Submit</Button>
         </div>
     );
 }

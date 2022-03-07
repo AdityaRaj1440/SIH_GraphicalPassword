@@ -1,7 +1,9 @@
 .font-link {
   font-family: 'Poppins', sans-serif;
 }
-  
+.selected {
+  border: 5px solid black;
+}
 .App {
   text-align: center;
   display: flex;
