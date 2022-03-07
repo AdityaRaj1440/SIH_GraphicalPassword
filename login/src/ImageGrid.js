@@ -24,26 +24,27 @@ const ImageGrid = () => {
         )
     }
     const prev = () => {
-        if (index > 0) {
+        if (index > 5) {
 
-            const tempIndex = index - 5
-            setIndex(tempIndex)
-            setSelection(itemData.slice(index, index + 5))
+            //const tempIndex = index - 5
+            setSelection(itemData.slice(index - 10, index - 5))
+            setIndex(index - 5)
 
         }
         console.log(index)
-        console.log(itemData.slice(index, index + 5))
+        console.log(itemData.slice(index - 10, index - 5))
 
     }
 
     const next = () => {
-        if (index < 15) {
-            const tempIndex = index + 5
-            setIndex(tempIndex)
+        if (index <= 15) {
+            // console.log(index)
+            // const tempIndex = index + 5
             setSelection(itemData.slice(index, index + 5))
+            setIndex(index + 5)
+            console.log(index)
         }
-        console.log(index)
-        console.log(itemData.slice(index, index + 5))
+        //console.log(itemData.slice(index, index + 5))
     }
     const sth = (item) => {
         const inc = status + 1
