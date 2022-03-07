@@ -14,3 +14,8 @@ What we need to do:
 Dependencies:
 npm install @mui/icons-material
 npm install react-router-dom@6
+npm install @fontsource/roboto
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
