@@ -263,7 +263,7 @@ function Regpixel() {
                     }}>Click to select position on primary image</button>
                 }
                 {
-                    !show ? <></> : <><img id="prime" alt="image1" src={`${arr[0]}`} /></>
+                    !show ? <></> : <><img id="prime" alt="image1" width="30%" src={`${arr[0]}`} /></>
                 }
                 <div>
                     {!btn2 ? <></> :
