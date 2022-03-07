@@ -59,8 +59,9 @@ def fetch(query: str, max_links_to_fetch: int, wd: webdriver, sleep_between_inte
 
 
 def persist_image(folder_path:str,url:str, counter):
+    header = {'referrer policy': 'Access-Control-Allow-Origin: *'}
     try:
-        image_content = requests.get(url).content
+        image_content = requests.get(url, header).content
 
     except Exception as e:
         print(f"ERROR - Could not download {url} - {e}")
