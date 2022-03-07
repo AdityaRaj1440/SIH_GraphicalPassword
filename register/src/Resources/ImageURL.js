@@ -34,16 +34,16 @@ const url = {
     ],
 
     Sceneries: [
-        "https://wallpaperaccess.com/thumb/1283968.jpg",
-        "https://wallpaperaccess.com/thumb/1444337.jpg",
-        "https://wallpaperaccess.com/thumb/1231662.jpg",
-        "https://wallpaperaccess.com/thumb/3390090.jpg",
-        "https://wallpaperaccess.com/thumb/283131.jpg",
-        "https://wallpaperaccess.com/thumb/6944340.jpg",
-        "https://wallpaperaccess.com/thumb/253668.jpg",
-        "https://wallpaperaccess.com/thumb/123543.jpg",
-        "https://wallpaperaccess.com/thumb/296104.jpg",
-        "https://wallpaperaccess.com/thumb/1566063.jpg"
+        "https://i.imgur.com/83aoGyMb.jpg",
+        "https://i.imgur.com/4pe1eeQb.jpg",
+        "https://i.imgur.com/UtjZRyvb.jpg",
+        "https://i.imgur.com/xvaIgtXb.jpg",
+        "https://i.imgur.com/qXDSJuTb.jpg",
+        "https://i.imgur.com/W4YsiYlb.jpg",
+        "https://i.imgur.com/EGR94p7b.jpg",
+        "https://i.imgur.com/offsW4Ib.jpg",
+        "https://i.imgur.com/aC0i4QOb.jpg",
+        "https://i.imgur.com/VEpIcMcb.jpg"
     ],
 
     Animations: [
@@ -59,6 +59,7 @@ const url = {
         "https://wallpaperaccess.com/thumb/983769.jpg",
         "https://wallpaperaccess.com/thumb/3674774.jpg",
         "https://wallpaperaccess.com/thumb/1186574.jpg"
+
     ],
 
     Fauna: [

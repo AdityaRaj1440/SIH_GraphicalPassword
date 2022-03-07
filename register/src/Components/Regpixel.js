@@ -2,27 +2,14 @@
 
 import React from 'react'
 import { decoy, arr } from './Image'
-
 import { useState } from 'react'
 
-
-var getPixels = require('get-image-pixels')
-
-
-
-//var getPixels = require("get-pixels")
-// getPixels(arr[0], function (err, pixels) {
-//     if (err) {
-//         console.log("Bad image path")
-//         return
-//     }
-//     console.log("got pixels", pixels.shape.slice())
-// })
 
 var arrG = []
 var arrG2 = []
 var array = []
 var array2 = []
+var beforeHash = ""
 var indicator = 0
 var k = 0;
 function Regpixel() {
@@ -34,18 +21,8 @@ function Regpixel() {
     const [oarr, setOarray] = useState(arr)
     const [group1, setGroup1] = useState([])
     const [group2, setGroup2] = useState([])
-
-    // function startDownload(url) {
-
-
-    //     var downloadedImg = new Image;
-    //     downloadedImg.crossOrigin = "Anonymous";
-    //     downloadedImg.addEventListener("load", , false);
-    //     downloadedImg.src = url;
-    //     return downloadedImg
-    // }
-
-
+    const [toEncrypt, setEncrypt] = useState("")
+    const [eachHash, setEachHash] = useState([])
     function getPos(array, group) {
 
         var pic = document.getElementById("prime")
@@ -54,9 +31,9 @@ function Regpixel() {
 
         function getMousePosition(canvas, event, array) {
             let rect = canvas.getBoundingClientRect();
-            //console.log("x y", event.clientX, event.clientY)
-            let x = (event.clientX - rect.left) * (1920 / 600);
-            let y = (event.clientY - rect.top) * (1080 / 400);
+
+            let x = (event.clientX - rect.left);
+            let y = (event.clientY - rect.top);
             array.push(x);
             array.push(y);
             console.log("Coordinate x: " + x,
@@ -71,22 +48,51 @@ function Regpixel() {
 
             setTimeout(() => {
                 const image = new SimpleImage(dimg);
-
-
-
                 var w = image.getWidth()
                 var h = image.getHeight()
-                console.log("testing simple Image :", w, h)
-                var low = 60
-
-                var gx = parseInt((x / low))
-                var gy = parseInt((y / low))
+                var low = 30
+                var hx = parseInt(w / low)
+                var hy = parseInt(h / low)
+                var gx = parseInt(x / low)
+                var gy = parseInt(y / low)
+                array[0] = hx
+                array[1] = hy
+                if (gx >= hx)
+                    gx = hx - 1
+                if (gy >= hy)
+                    gy = hy - 1
                 gx = (gx === 0) ? 1 : gx
                 gy = (gy === 0) ? 1 : gy
-                console.log("groups: ", gx, gy)
                 array.push(gx)
                 array.push(gy)
+
+                var sum = 0
+
+                for (var i = gx * low - 1; i < gx * low + low - 1; i++)
+                    for (var j = gy * low - 1; j < gy * low + low - 1; j++) {
+                        var pixel = image.getPixel(i, j)
+
+                        sum += pixel.getRed()
+                        sum += pixel.getGreen()
+                        sum += pixel.getBlue()
+
+                    }
+
+                var toHash = sum.toString()
+                let hash = ""
+
+                for (var i = 0; i < toHash.length; i++) {
+                    var n = parseInt(toHash.charAt(i))
+                    var c = String.fromCharCode(n + 97)
+                    hash = hash.concat(c)
+                }
+                if (indicator === 1) {
+                    beforeHash = beforeHash.concat(hash)
+                }
+                console.log(hash)
+
             }, 500);
+
 
 
         }
@@ -102,8 +108,10 @@ function Regpixel() {
                 for (var i = 0; i < 7; i += 2) {
                     getGroup(array[i], array[i + 1], group)
                 }
+                if (indicator === 0) {
+                    setBtn2(true)
+                }
 
-                setBtn2(true)
                 k = 0
                 pic.removeEventListener("mousedown", pos)
                 if (indicator === 0) {
@@ -129,7 +137,7 @@ function Regpixel() {
 
 
     function checkReselct() {
-        for (var i = 0; i < 8; i += 1) {
+        for (var i = 0; i < 10; i += 1) {
             if (arrG[i] !== arrG2[i]) {
                 array = []
                 k = 0
@@ -137,16 +145,87 @@ function Regpixel() {
                 arrG = []
                 arrG2 = []
                 indicator = 0
+                beforeHash = ""
                 setBtn(true)
                 setBtn2(false)
+                setShow(false)
                 alert("pixel positions do not match previous attempt")
                 return
             }
         }
         alert("password confirmed")
-        for (var i = 0; i < 7; i += 2) {
+
+        function getHashFromGroup(x, y, idx, arrGroups) {
+
+            var url = arr[idx]
+            const dimg = new Image();
+            dimg.crossOrigin = "Anonymous";
+            dimg.src = url + "?not-from-cache-please";
+
+            setTimeout(() => {
+                const image = new SimpleImage(dimg);
+                var w = image.getWidth()
+                var h = image.getHeight()
+                console.log("here width", w)
+                console.log("here height", h)
+                var low = 30
+                var hx = parseInt(w / low)
+                var hy = parseInt(h / low)
+                console.log("groups given: ", x, y)
+                console.log("maxes given: ", arrGroups[0], arrGroups[1])
+                var gx = Math.ceil(x * (hx / arrGroups[0]))
+                console.log("x ratio to mul: ", (hx / arrGroups[0]))
+                var gy = Math.ceil(y * (hy / arrGroups[1]))
+                console.log("y ratio to mul: ", (hy / arrGroups[1]))
+                console.log("groups ratioed: ", gx, gy)
+
+                if (gx >= hx)
+                    gx = hx - 1
+                if (gy >= hy)
+                    gy = hy - 1
+                console.log("groups compared to maxes: ", gx, gy)
+
+                gx = (gx === 0) ? 1 : gx
+                gy = (gy === 0) ? 1 : gy
+
+                var sum = 0
+                for (var i = gx * low - 1; i < gx * low + low - 1; i++)
+                    for (var j = gy * low - 1; j < gy * low + low - 1; j++) {
+                        var pixel = image.getPixel(i, j)
+                        sum += pixel.getRed()
+                        sum += pixel.getGreen()
+                        sum += pixel.getBlue()
+                    }
+
+                var toHash = sum.toString()
+                let hash = ""
+
+                for (var i = 0; i < toHash.length; i++) {
+                    var n = parseInt(toHash.charAt(i))
+                    var c = String.fromCharCode(n + 97)
+                    hash = hash.concat(c)
+                }
+                var arrayForEachHash = eachHash
+                arrayForEachHash.push(hash)
+                setEachHash(arrayForEachHash)
+                beforeHash = beforeHash.concat(hash)
+                setEncrypt(beforeHash)
+            }, 500);
+
+        }
+
+        for (var i = 0; i < 9; i += 2) {
             console.log("final groups: ", arrG[i], arrG[i + 1])
         }
+
+        for (var i = 1; i < 5; i++) {
+            for (var j = 2; j < 9; j += 2) {
+                getHashFromGroup(arrG[j], arrG[j + 1], i, arrG)
+            }
+
+        }
+
+
     }
 
 
@@ -186,17 +265,18 @@ function Regpixel() {
                 {
                     !show ? <></> : <><img id="prime" alt="image1" src={`${arr[0]}`} /></>
                 }
+                <div>
+                    {!btn2 ? <></> :
+                        <button onClick={() => {
 
-                {!btn2 ? <></> :
-                    <button onClick={() => {
+                            setTimeout(() => {
+                                setBtn2(false)
+                                getPos(array2, arrG2)
+                            }, 400);
 
-                        setTimeout(() => {
-                            getPos(array2, arrG2)
-                        }, 400);
-
-                    }}>Click to reselect pixel positions to confirm</button>
-                }
-
+                        }}>Click to reselect pixel positions to confirm</button>
+                    }
+                </div>
 
             </div>
 
