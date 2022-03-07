@@ -1,7 +1,7 @@
 const url = {
     Movies: [
         "https://i.imgur.com/Ncp9k3n.jpeg",
-        "https://wallpaperaccess.com/thumb/1077156.jpg",
+        "https://i.imgur.com/4zSAWJ5b.jpg",
         "https://wallpaperaccess.com/thumb/2529480.jpg",
         "https://wallpaperaccess.com/thumb/1561410.jpg",
         "https://wallpaperaccess.com/thumb/752713.jpg",

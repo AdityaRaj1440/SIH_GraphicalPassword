@@ -5,6 +5,20 @@ import { decoy, arr } from './Image'
 
 import { useState } from 'react'
 
+
+var getPixels = require('get-image-pixels')
+
+
+
+//var getPixels = require("get-pixels")
+// getPixels(arr[0], function (err, pixels) {
+//     if (err) {
+//         console.log("Bad image path")
+//         return
+//     }
+//     console.log("got pixels", pixels.shape.slice())
+// })
+
 var arrG = []
 var arrG2 = []
 var array = []
@@ -20,6 +34,17 @@ function Regpixel() {
     const [oarr, setOarray] = useState(arr)
     const [group1, setGroup1] = useState([])
     const [group2, setGroup2] = useState([])
+
+    // function startDownload(url) {
+
+
+    //     var downloadedImg = new Image;
+    //     downloadedImg.crossOrigin = "Anonymous";
+    //     downloadedImg.addEventListener("load", , false);
+    //     downloadedImg.src = url;
+    //     return downloadedImg
+    // }
+
 
     function getPos(array, group) {
 
@@ -44,29 +69,25 @@ function Regpixel() {
             dimg.crossOrigin = "Anonymous";
             dimg.src = url + "?not-from-cache-please";
 
-            // let canvas = document.createElement("canvas");
-            // let context = canvas.getContext("2d");
-            // canvas.width = dimg.width;
-            // canvas.height = dimg.height;
-            // context.drawImage(dimg, 0, 0);
-            // var test = context.getImageData(10, 10, 50, 50)
-            //console.log("testing getImageData", test)
-            //console.log("cors friendly image:", dimg)
+            setTimeout(() => {
+                const image = new SimpleImage(dimg);
 
-            const image = new SimpleImage(dimg);
 
-            var w = image.getWidth()
-            var h = image.getHeight()
-            console.log("testing simple Image :", w, h)
-            var low = 60
 
-            var gx = parseInt((x / low))
-            var gy = parseInt((y / low))
-            gx = (gx === 0) ? 1 : gx
-            gy = (gy === 0) ? 1 : gy
-            console.log("groups: ", gx, gy)
-            array.push(gx)
-            array.push(gy)
+                var w = image.getWidth()
+                var h = image.getHeight()
+                console.log("testing simple Image :", w, h)
+                var low = 60
+
+                var gx = parseInt((x / low))
+                var gy = parseInt((y / low))
+                gx = (gx === 0) ? 1 : gx
+                gy = (gy === 0) ? 1 : gy
+                console.log("groups: ", gx, gy)
+                array.push(gx)
+                array.push(gy)
+            }, 500);
+
 
         }
 
@@ -76,6 +97,7 @@ function Regpixel() {
                 getMousePosition(pic, e, array);
             }
             if (k === 4) {
+
 
                 for (var i = 0; i < 7; i += 2) {
                     getGroup(array[i], array[i + 1], group)
@@ -91,13 +113,18 @@ function Regpixel() {
                     setGroup2(arrG2)
                 }
                 indicator++
+                if (indicator === 2) {
+                    setTimeout(() => {
+                        checkReselct()
+                    }, 700);
+                }
+
             }
         }
 
         pic.addEventListener("mousedown", pos)
-        if (indicator === 2) {
-            checkReselct()
-        }
+
+
     }
 
 
@@ -109,12 +136,14 @@ function Regpixel() {
                 array2 = []
                 arrG = []
                 arrG2 = []
+                indicator = 0
                 setBtn(true)
                 setBtn2(false)
                 alert("pixel positions do not match previous attempt")
-                break
+                return
             }
         }
+        alert("password confirmed")
         for (var i = 0; i < 7; i += 2) {
             console.log("final groups: ", arrG[i], arrG[i + 1])
         }
