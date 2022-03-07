@@ -10,7 +10,7 @@ import { useState } from 'react';
 
 
 export default function ImageGrid() {
-    const [index, setIndex] = useState(5);
+    const [index, setIndex] = useState(0);
     const [selection, setSelection] = useState(itemData.slice(0, 5))
     const navigate = useNavigate()
     const submit = () => {
@@ -19,19 +19,21 @@ export default function ImageGrid() {
         )
     }
     const prev = () => {
-        if (index > 5) {
+        if (index > 0) {
             const tempIndex = index - 5
             setIndex(tempIndex)
-            setSelection(itemData.slice(index - 5, index))
+            setSelection(itemData.slice(index, index + 5))
+            console.log(index)
         }
 
     }
 
     const next = () => {
-        if (index <= 5) {
+        if (index < 5) {
             const tempIndex = index + 5
             setIndex(tempIndex)
-            setSelection(itemData.slice(index - 5, index))
+            setSelection(itemData.slice(index, index + 5))
+            console.log(index)
         }
     }
     return (
@@ -58,7 +60,7 @@ export default function ImageGrid() {
         </ImageList>
         <div>
         <Button variant="contained" onClick={prev}>Previous</Button>
-        <Button variant="contained" onClick={next}>next</Button>
+        <Button variant="contained" onClick={next}>Next</Button>
         <Button variant="contained" onClick={submit}>Reset to Login</Button>
         </div>
         
