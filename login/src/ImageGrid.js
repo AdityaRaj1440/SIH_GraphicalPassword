@@ -20,8 +20,8 @@ export default function ImageGrid() {
     return (
     <div className="App">
         <ImageList sx={{
-            width: 500,
-            //  height: 450
+            width: 1000,
+            height:200
         }}
             cols={5}
             rowHeight={100}
