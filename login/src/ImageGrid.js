@@ -13,7 +13,7 @@ import { SettingsInputAntenna } from '@mui/icons-material';
 const ImageGrid = () => {
     let lis = itemData.slice(0, 5)
     const [index, setIndex] = useState(5);
-    const [status, setStatus] = useState(0)
+    const [status, setStatus] = useState(1)
     const [selection, setSelection] = useState(lis)
     const [selectedImg, setSelectedImg] = useState();
     const navigate = useNavigate()
@@ -45,6 +45,16 @@ const ImageGrid = () => {
         console.log(index)
         console.log(itemData.slice(index, index + 5))
     }
+    const sth = (item) => {
+        const inc = status + 1
+        setStatus(inc)
+        if (inc > 6) {
+            alert("Can't select more than 5 images")
+        }
+        else {
+            console.log(status + item.title + " selected")
+        }
+    }
     return (
         <div className="App">
             <ImageList sx={{
@@ -62,7 +72,7 @@ const ImageGrid = () => {
                             srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
                             alt={item.title}
                             loading="lazy"
-                            onClick={() => setSelectedImg(item)}
+                            onClick={() => sth(item)}
                         />
                     </ImageListItem>
                 ))}
