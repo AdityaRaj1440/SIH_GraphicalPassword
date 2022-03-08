@@ -1,12 +1,37 @@
 import Image from './Image'
 import url from '../Resources/ImageURL'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { arr } from './Image';
 
 const CatImage = ({ cat }) => {
   const len = url[cat].length
   const URL = url[cat]
   const [src, setSrc] = useState(0)
 
+  useEffect(()=>{
+    let elements = document.getElementsByTagName("img")
+    for(let i=0; i<elements.length; i++)
+    {
+      
+          if(!arr.includes(elements[i].id)&&elements[i].classList.contains("imgSelected"))
+          {
+              elements[i].classList.remove("imgSelected")
+          }
+          else if(arr.includes(elements[i].id)&&!elements[i].classList.contains("imgSelected"))
+          {
+            elements[i].classList.add("imgSelected")
+          }
+      
+    }
+  })
+
+const changeImgList = () => {
+  setSrc(src + 6)
+  
+  
+}
+  
+    
 
 
   return (
@@ -22,7 +47,7 @@ const CatImage = ({ cat }) => {
         <Image url={URL[(src + 5) % len]} />
       </div>
       <div align="CENTER">
-        <button type="button" onClick={() => setSrc(src + 6)}>Show More</button>
+        <button type="button" onClick={changeImgList}>Show More</button>
       </div>
 
     </>

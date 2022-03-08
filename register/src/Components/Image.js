@@ -5,19 +5,45 @@ let decoy = []
 const arr = []
 const key = Object.keys(URL)
 const Image = ({ url }) => {
-
-
+    let element
+    let elements = document.getElementsByTagName("img")
+    for(let i=0; i<elements.length; i++)
+    {
+      
+          if(!arr.includes(elements[i].id)&&elements[i].classList.contains("imgSelected"))
+          {
+              elements[i].classList.remove("imgSelected")
+          }
+          else if(arr.includes(elements[i].id)&&!elements[i].classList.contains("imgSelected"))
+          {
+            elements[i].classList.add("imgSelected")
+          }
+      
+    }
     const [list, setList] = useState([])
     // console.log(list);
     if (arr.length > 4)
         makeDecoy();
     const addImage = () => {
+        element= document.getElementById(url)
+        let e
+        for(let i=0; i<element.length; i++)
+        {
+            // if(element[i].hasAttribute('src')&&element[i].getAttribute('src')===url)
+            //  {
+            //      e= element[i]
+            //      break
+            //  }
+        }
+        console.log(element)
         if (!arr.includes(url) && arr.length !== 5) {
             arr.push(url)
+            element.classList.add("imgSelected");
             setList(arr)
         }
         else if (arr.includes(url)) {
             arr.splice(arr.indexOf(url), 1)
+            element.classList.remove("imgSelected")
             setList(arr)
         }
         else {
@@ -47,7 +73,7 @@ const Image = ({ url }) => {
     return (
         <>
 
-            <img src={url} alt="img1" width="15%" onClick={addImage} />
+            <img src={url} alt="img1" width="15%" height="15%" onClick={addImage} class= "img" id= {url} />
             &nbsp;&nbsp;
             {/* {restImage()}
           {console.log("decoy length:",decoy)} */}
