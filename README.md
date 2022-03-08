@@ -2,8 +2,8 @@
 
 ### TODO
 - [X] Registration
-- [ ] Backend
-- [X] Login
+- [X] Backend
+- [ ] Login
 - [ ] Pixel-Hash
 - [ ] Pixel-Position
 - [X] Image-Scraper
