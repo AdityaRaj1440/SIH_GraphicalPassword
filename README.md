@@ -1,9 +1,9 @@
 # SIH_GraphicalPasswordAuthentication
 
 ### TODO
-- [ ] Registration
+- [X] Registration
 - [ ] Backend
-- [ ] Login
+- [X] Login
 - [ ] Pixel-Hash
 - [ ] Pixel-Position
 - [X] Image-Scraper
