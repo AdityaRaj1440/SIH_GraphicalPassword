@@ -2,7 +2,6 @@ import './App.css';
 import Login from './Login';
 import './App.css';
 import Navbar from './Navbar';
-import MenuIcon from '@mui/icons-material/Menu';
 import { useNavigate } from "react-router-dom";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ImageGrid from './ImageGrid';
