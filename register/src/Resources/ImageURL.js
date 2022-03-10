@@ -1,78 +1,76 @@
 const url = {
     Movies: [
-        "https://i.imgur.com/Ncp9k3n.jpeg",
-        "https://i.imgur.com/4zSAWJ5b.jpg",
-        "https://i.imgur.com/mjZUaWm.jpg",
-        "https://i.imgur.com/1zKkceA.jpg",
-        "https://wallpaperaccess.com/thumb/1561410.jpg",
-        "https://wallpaperaccess.com/thumb/752713.jpg",
-        "https://wallpaperaccess.com/thumb/2316845.jpg",
-        "https://wallpaperaccess.com/thumb/1856085.jpg",
-        "https://wallpaperaccess.com/thumb/2020588.jpg",
-        "https://wallpaperaccess.com/thumb/1715643.jpg",
-        "https://wallpaperaccess.com/thumb/1469577.jpg",
-        "https://wallpaperaccess.com/thumb/1342819.jpg",
-        "https://wallpaperaccess.com/thumb/1323070.jpg",
-        "https://wallpaperaccess.com/thumb/1263881.jpg",
-        "https://wallpaperaccess.com/thumb/13453.jpg",
-        "https://wallpaperaccess.com/thumb/436209.jpg",
-        "https://wallpaperaccess.com/thumb/4318306.jpg"
-
+        "https://i.imgur.com/gkggwfI.jpeg",
+        "https://i.imgur.com/C4Jx1yI.jpeg",
+        "https://i.imgur.com/PRMoETu.jpeg",
+        "https://i.imgur.com/7bBTSLD.jpeg",
+        "https://i.imgur.com/B2ZHTfl.jpeg",
+        "https://i.imgur.com/YhGUp4i.jpeg",
+        "https://i.imgur.com/zdY5P8k.jpeg",
+        "https://i.imgur.com/MJoQkws.jpeg",
+        "https://i.imgur.com/LEUHgPo.jpeg",
+        "https://i.imgur.com/whJStKC.jpeg",
+        "https://i.imgur.com/YZ6G4qb.jpeg",
+        "https://i.imgur.com/uN4SXV3.jpeg",
+        "https://i.imgur.com/JX9wzo4.jpeg",
+        "https://i.imgur.com/ga2oHFD.jpeg",
+        "https://i.imgur.com/0zLNWkz.jpeg",
+        "https://i.imgur.com/mU1BSgt.jpeg",
+        "https://i.imgur.com/RKUxlGt.jpeg"
     ],
 
     Series: [
-        "https://wallpaperaccess.com/thumb/5570948.jpg",
-        "https://wallpaperaccess.com/thumb/32956.jpg",
-        "https://wallpaperaccess.com/thumb/1984678.jpg",
-        "https://wallpaperaccess.com/thumb/2044397.jpg",
-        "https://wallpaperaccess.com/thumb/6998672.jpg",
-        "https://wallpaperaccess.com/thumb/1089002.jpg",
-        "https://wallpaperaccess.com/thumb/790319.png",
-        "https://wallpaperaccess.com/thumb/7965311.jpg",
-        "https://wallpaperaccess.com/thumb/782445.jpg",
-        "https://wallpaperaccess.com/thumb/1519324.jpg",
-        "https://wallpaperaccess.com/thumb/304812.jpg"
+        "https://i.imgur.com/GFuJ2nm.jpeg",
+        "https://i.imgur.com/wmnapvn.jpeg",
+        "https://i.imgur.com/OvBVIk4.jpeg",
+        "https://i.imgur.com/dYTXqoO.jpeg",
+        "https://i.imgur.com/NZIx93N.jpeg",
+        "https://i.imgur.com/DlqbafX.jpeg",
+        "https://i.imgur.com/sPJBBnP.jpeg",
+        "https://i.imgur.com/VXGdmZK.jpeg",
+        "https://i.imgur.com/CozwLqT.jpeg",
+        "https://i.imgur.com/jd7s4RR.jpeg",
+        "https://i.imgur.com/2ukWSKQ.jpeg"
     ],
-
     Sceneries: [
-        "https://i.imgur.com/83aoGyMb.jpg",
-        "https://i.imgur.com/4pe1eeQb.jpg",
-        "https://i.imgur.com/UtjZRyvb.jpg",
-        "https://i.imgur.com/xvaIgtXb.jpg",
-        "https://i.imgur.com/qXDSJuTb.jpg",
-        "https://i.imgur.com/W4YsiYlb.jpg",
-        "https://i.imgur.com/EGR94p7b.jpg",
-        "https://i.imgur.com/offsW4Ib.jpg",
-        "https://i.imgur.com/aC0i4QOb.jpg",
-        "https://i.imgur.com/VEpIcMcb.jpg"
+        "https://i.imgur.com/QWWfSH0.jpg",
+        "https://i.imgur.com/E3i9a3R.jpg",
+        "https://i.imgur.com/Y0m250K.jpg",
+        "https://i.imgur.com/8HYwqw2.jpg",
+        "https://i.imgur.com/VZzom79.jpg",
+        "https://i.imgur.com/MPxyCgP.jpg",
+        "https://i.imgur.com/HoS4i5X.jpg",
+        "https://i.imgur.com/kFTtANQ.jpg",
+        "https://i.imgur.com/DKlWB8k.jpg",
+        "https://i.imgur.com/jIRydur.jpg"
     ],
 
     Animations: [
-        "https://wallpaperaccess.com/thumb/7731869.jpg",
-        "https://wallpaperaccess.com/thumb/36626.jpg",
-        "https://wallpaperaccess.com/thumb/1097651.jpg",
-        "https://wallpaperaccess.com/thumb/4156393.jpg",
-        "https://wallpaperaccess.com/thumb/6355004.jpg",
-        "https://wallpaperaccess.com/thumb/1371933.jpg",
-        "https://wallpaperaccess.com/thumb/1657425.jpg",
-        "https://wallpaperaccess.com/thumb/4246320.jpg",
-        "https://wallpaperaccess.com/thumb/1334585.jpg",
-        "https://wallpaperaccess.com/thumb/983769.jpg",
-        "https://wallpaperaccess.com/thumb/3674774.jpg",
-        "https://wallpaperaccess.com/thumb/1186574.jpg"
-
+        "https://i.imgur.com/2bLgV0g.jpg",
+        "https://i.imgur.com/rNa4YFJ.jpg",
+        "https://i.imgur.com/HmisMWj.jpg",
+        "https://i.imgur.com/hmKsU3V.jpg",
+        "https://i.imgur.com/fLGdWK5.jpg",
+        "https://i.imgur.com/CHPuPMU.jpg",
+        "https://i.imgur.com/5NgCtA2.jpg",
+        "https://i.imgur.com/NqhlmA8.jpg",
+        "https://i.imgur.com/rIU8RdP.jpg",
+        "https://i.imgur.com/QLAOjRQ.jpg",
+        "https://i.imgur.com/EU6LtWz.jpg",
+        "https://i.imgur.com/Ai4arfv.jpg"
     ],
 
     Fauna: [
-        "https://wallpaperaccess.com/thumb/347962.jpg",
-        "https://wallpaperaccess.com/thumb/515344.jpg",
-        "https://wallpaperaccess.com/thumb/2103093.jpg",
-        "https://wallpaperaccess.com/thumb/3294441.jpg",
-        "https://wallpaperaccess.com/thumb/351796.jpg",
-        "https://wallpaperaccess.com/thumb/106104.jpg",
-        "https://wallpaperaccess.com/thumb/328913.jpg",
-        "https://wallpaperaccess.com/thumb/1174967.jpg"
+        "https://i.imgur.com/txDDwvJ.jpeg",
+        "https://i.imgur.com/LQ27wWE.jpeg",
+        "https://i.imgur.com/Mup7gEo.jpeg",
+        "https://i.imgur.com/otZlzyl.jpeg",
+        "https://i.imgur.com/R3cztyL.jpeg",
+        "https://i.imgur.com/YTsKGh3.jpeg",
+        "https://i.imgur.com/AlYSa2p.jpeg",
+        "https://i.imgur.com/zEI7q7G.jpeg"
     ]
 }
+
 
 export default url

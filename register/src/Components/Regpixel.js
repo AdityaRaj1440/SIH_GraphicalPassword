@@ -44,13 +44,14 @@ function Regpixel() {
             var url = arr[0]
             const dimg = new Image();
             dimg.crossOrigin = "Anonymous";
-            dimg.src = url + "?not-from-cache-please";
+            dimg.src = url
+            //dimg.src = url + "?not-from-cache-please";
 
             setTimeout(() => {
                 const image = new SimpleImage(dimg);
                 var w = image.getWidth()
                 var h = image.getHeight()
-                var low = 30
+                var low = 60
                 var hx = parseInt(w / low)
                 var hy = parseInt(h / low)
                 var gx = parseInt(x / low)
@@ -160,7 +161,8 @@ function Regpixel() {
             var url = arr[idx]
             const dimg = new Image();
             dimg.crossOrigin = "Anonymous";
-            dimg.src = url + "?not-from-cache-please";
+            dimg.src = url
+            //dimg.src = url + "?not-from-cache-please";
 
             setTimeout(() => {
                 const image = new SimpleImage(dimg);
@@ -168,7 +170,7 @@ function Regpixel() {
                 var h = image.getHeight()
                 console.log("here width", w)
                 console.log("here height", h)
-                var low = 30
+                var low = 60
                 var hx = parseInt(w / low)
                 var hy = parseInt(h / low)
                 console.log("groups given: ", x, y)
