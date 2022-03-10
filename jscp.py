@@ -32,6 +32,9 @@ def image_write_text(search, inum):
                 if img_source == '//s.imgur.com/images/loaders/ddddd1_181817/48.gif':
                     continue
 
+                lst = list(img_source)
+                lst[-5] = 'h'
+                img_source = "".join(lst)
                 link = 'https:' + img_source
                 list_link.append(link)
                 x = int(x) + 1
