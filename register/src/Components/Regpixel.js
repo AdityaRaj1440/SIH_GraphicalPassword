@@ -4,8 +4,8 @@ import React from 'react'
 import { arr } from './Image'
 import { useState } from 'react'
 import { decoy } from './FinalizePassword'
-
-
+import axios from 'axios'
+import baseUrl from '../Resources/BaseURL'
 var arrG = []
 var arrG2 = []
 var array = []
@@ -14,6 +14,10 @@ var beforeHash = ""
 var indicator = 0
 var k = 0;
 function Regpixel() {
+
+    // axios.get(`${baseUrl}/user`)
+    //     .then(res => console.log("res from server:", res))
+    //     .catch(err => console.log(err))
 
     const [show, setShow] = useState(false)
     const [btn, setBtn] = useState(true)
