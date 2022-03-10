@@ -35,6 +35,8 @@ const Output = ({ selectedImg, setSelectedImg }) => {
         )
     }
 
+   
+
     return (
         <div className="App">
             <div>
@@ -62,6 +64,7 @@ const Output = ({ selectedImg, setSelectedImg }) => {
             <div>
                 <Button variant="contained" onClick={shufflestupid}>Shuffle</Button>
                 <Button variant="contained" onClick={submit}>Reset to Login</Button>
+                
             </div>
         </div>
     );

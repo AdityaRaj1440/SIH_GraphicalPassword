@@ -46,7 +46,7 @@ const ImageGrid = ({ selectedImg, setSelectedImg }) => {
             )
         }
     }
-    
+
     const shuffle = () => {
         let shuffArr = selectedImg
         shuffArr = shuffArr.sort(() => Math.random() - 0.5)
@@ -78,6 +78,12 @@ const ImageGrid = ({ selectedImg, setSelectedImg }) => {
             setSelectedImg(tempchange)
             console.log(selectedImg)
         }
+    }
+
+    const reset = () => {
+        let lis = []
+        setSelectedImg(lis)
+        setStatus(1)
     }
     return (
         <div className="App">
@@ -131,6 +137,7 @@ const ImageGrid = ({ selectedImg, setSelectedImg }) => {
             <div>
                 <Button variant="contained" onClick={output}>Go to output</Button>
                 <Button variant="contained" onClick={shuffle}>Shuffle</Button>
+                <Button variant="contained" onClick={reset}>Reset elements</Button>
 
             </div>
 
