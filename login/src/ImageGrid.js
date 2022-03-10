@@ -10,12 +10,12 @@ import { useEffect, useState } from 'react';
 import { SettingsInputAntenna } from '@mui/icons-material';
 
 
-const ImageGrid = () => {
+const ImageGrid = ({ selectedImg, setSelectedImg}) => {
     let lis = itemData.slice(0, 5)
     const [index, setIndex] = useState(0);
     const [status, setStatus] = useState(1)
     const [selection, setSelection] = useState(lis)
-    const [selectedImg, setSelectedImg] = useState([]);
+    
     const navigate = useNavigate()
 
     const submit = () => {
@@ -34,6 +34,15 @@ const ImageGrid = () => {
         console.log(index)
         console.log(itemData.slice(index - 10, index - 5))
 
+    }
+    const output = () => {
+        if (status <= 6) {
+            alert("You didn't select enough images")
+        } else {
+            return (
+                navigate("/output")
+            )
+        }
     }
 
     const next = () => {
@@ -108,6 +117,9 @@ const ImageGrid = () => {
                     </ImageListItem>
                 ))}
             </ImageList>
+            </div>
+            <div>
+            <Button variant="contained" onClick={output}>Previous</Button>
             </div>
 
         </div>
