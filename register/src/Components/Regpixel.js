@@ -6,6 +6,7 @@ import { useState } from 'react'
 import { decoy } from './FinalizePassword'
 import axios from 'axios'
 import baseUrl from '../Resources/BaseURL'
+
 var arrG = []
 var arrG2 = []
 var array = []
@@ -13,16 +14,17 @@ var array2 = []
 var beforeHash = ""
 var indicator = 0
 var k = 0;
-function Regpixel() {
+var arrayForEncrypt = []
+function Regpixel({ user }) {
 
     // axios.get(`${baseUrl}/user`)
     //     .then(res => console.log("res from server:", res))
     //     .catch(err => console.log(err))
 
+    const [username, setUsername] = useState(user)
     const [show, setShow] = useState(false)
     const [btn, setBtn] = useState(true)
     const [btn2, setBtn2] = useState(false)
-    const [decoyArr, setDecoy] = useState(decoy)
     const [oarr, setOarray] = useState(arr)
     const [group1, setGroup1] = useState([])
     const [group2, setGroup2] = useState([])
@@ -94,6 +96,11 @@ function Regpixel() {
                     hash = hash.concat(c)
                 }
                 if (indicator === 1) {
+
+                    let arrForeachHash = eachHash
+                    arrForeachHash.push(hash)
+                    arrayForEncrypt.push(hash)
+                    setEachHash(arrForeachHash)
                     beforeHash = beforeHash.concat(hash)
                 }
                 console.log(hash)
@@ -153,6 +160,7 @@ function Regpixel() {
                 arrG2 = []
                 indicator = 0
                 beforeHash = ""
+                setEachHash([])
                 setBtn(true)
                 setBtn2(false)
                 setShow(false)
@@ -216,6 +224,7 @@ function Regpixel() {
                 }
                 var arrayForEachHash = eachHash
                 arrayForEachHash.push(hash)
+                arrayForEncrypt.push(hash)
                 setEachHash(arrayForEachHash)
                 beforeHash = beforeHash.concat(hash)
                 setEncrypt(beforeHash)
@@ -233,6 +242,32 @@ function Regpixel() {
             }
 
         }
+
+        setTimeout(() => {
+            console.log("toencrypt: ", toEncrypt)
+            let hashToEncrypt = ""
+            console.log("array for encrypt ", arrayForEncrypt)
+            hashToEncrypt = hashToEncrypt.concat(arrayForEncrypt[2])
+            hashToEncrypt = hashToEncrypt.concat(arrayForEncrypt[4])
+            hashToEncrypt = hashToEncrypt.concat(arrayForEncrypt[10])
+            hashToEncrypt = hashToEncrypt.concat(arrayForEncrypt[15])
+            hashToEncrypt = hashToEncrypt.concat(arrayForEncrypt[17])
+
+            console.log("hashToEncryt:  ", hashToEncrypt)
+
+            const userWithHash = {
+                username: username,
+                passhash: hashToEncrypt,
+                arrimg: decoy
+            }
+
+            console.log("user object to be sent to backend ", userWithHash)
+
+            axios.post(`${baseUrl}/user/register`, userWithHash)
+                .then(res => console.log("res from server:", res))
+                .catch(err => console.log(err))
+
+        }, 900)
 
 
     }
