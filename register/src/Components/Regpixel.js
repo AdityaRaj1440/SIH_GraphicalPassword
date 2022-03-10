@@ -239,15 +239,18 @@ function Regpixel() {
                 textAlign: "center",
                 fontSize: "20px"
             }}>
-                Your selected sequence of images
+                <h1>Password Validation</h1>
+                <br/>
+              <h2>Your selected sequence of images</h2>  
             </div>
 
-
-            <img id="i1" alt="image1" width="15%" src={`${oarr[0]}`} />
-            <img id="i2" alt="image2" width="15%" src={`${oarr[1]}`} />
-            <img id="i3" alt="image3" width="15%" src={`${oarr[2]}`} />
-            <img id="i4" alt="image4" width="15%" src={`${oarr[3]}`} />
-            <img id="i5" alt="image5" width="15%" src={`${oarr[4]}`} />
+            <center>
+            <img id="i1" alt="image1" width="15%" src={`${oarr[0]}`} class="verify" />
+            <img id="i2" alt="image2" width="15%" src={`${oarr[1]}`} class="verify" />
+            <img id="i3" alt="image3" width="15%" src={`${oarr[2]}`} class="verify" />
+            <img id="i4" alt="image4" width="15%" src={`${oarr[3]}`} class="verify" />
+            <img id="i5" alt="image5" width="15%" src={`${oarr[4]}`} class="verify" />
+            </center>
 
             <div style={{
                 padding: "20px",
@@ -256,17 +259,19 @@ function Regpixel() {
 
             }}>
                 {!btn ? <></> :
-                    <button onClick={() => {
+                    <button id="positionVerify" onClick={() => {
                         setShow(true)
                         setTimeout(() => {
                             getPos(array, arrG)
                             setBtn(false)
                         }, 400);
 
-                    }}>Click to select position on primary image</button>
+                    }}>Click 4 times to select positions on Primary Image</button>
                 }
+                <br/><br/>
                 {
-                    !show ? <></> : <><img id="prime" alt="image1" width="30%" src={`${arr[0]}`} /></>
+                    !show ? <></> : <><img id="prime" alt="image1" width="30%" src={`${arr[0]}`} class="verify"/>
+                                      <h4>Click 4 times to select positions</h4></>
                 }
                 <div>
                     {!btn2 ? <></> :

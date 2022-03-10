@@ -28,6 +28,16 @@ hr {
   border-radius: 10px;
 }
 
+#positionVerify {
+  width: 60%;
+  height: 60px;
+  font-size: large;
+  padding: 10px 10px;
+  color: white;
+  background-color: black;
+  border-radius: 10px;
+}
+
 #Title {
   background-color: rgb(182, 182, 240);
   border: 1px solid blue;
@@ -84,3 +94,9 @@ input[type=text] {
   transform: scale(1.05);
   
 }
+
+.verify {
+  border: 2px solid black;
+  padding: 10px;
+}
+
