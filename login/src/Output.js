@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import * as React from 'react';
 import ImageList from '@mui/material/ImageList';
@@ -7,12 +7,23 @@ import Button from '@mui/material/Button';
 import { useNavigate } from 'react-router-dom';
 
 const Output = ({ selectedImg, setSelectedImg }) => {
+    // const [mfstate, setMfstate] = useState(selectedImg)
+    // useEffect(() => {
+    //     let mountArray = shufflestupid()
+    //     setMfstate(mountArray)
+    // }, [])
+    // useEffect(() => {
+    //     console.log('Something happened')
+    //   }, [JSON.stringify(selectedImg)]);
+
     const navigate = useNavigate()
-    const shuffle = () => {
-        let shuffArr = selectedImg
+    const shufflestupid = () => {
+        let shuffArr = selectedImg.slice()
         shuffArr = shuffArr.sort(() => Math.random() - 0.5)
+        // let b = shuffArr[0]
+        // shuffArr[0] = shuffArr[1]
+        // shuffArr[1] = b
         setSelectedImg(shuffArr)
-        // console.log(shuffArr)
         console.log(selectedImg)
     }
 
@@ -49,7 +60,7 @@ const Output = ({ selectedImg, setSelectedImg }) => {
                 </ImageList>
             </div>
             <div>
-                <Button variant="contained" onClick={shuffle}>Shuffle</Button>
+                <Button variant="contained" onClick={shufflestupid}>Shuffle</Button>
                 <Button variant="contained" onClick={submit}>Reset to Login</Button>
             </div>
         </div>

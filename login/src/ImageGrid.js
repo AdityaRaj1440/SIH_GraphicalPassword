@@ -46,6 +46,14 @@ const ImageGrid = ({ selectedImg, setSelectedImg }) => {
             )
         }
     }
+    
+    const shuffle = () => {
+        let shuffArr = selectedImg
+        shuffArr = shuffArr.sort(() => Math.random() - 0.5)
+        setSelectedImg(shuffArr)
+        // console.log(shuffArr)
+        console.log(selectedImg)
+    }
 
     const next = () => {
         if (index <= 15) {
@@ -122,6 +130,7 @@ const ImageGrid = ({ selectedImg, setSelectedImg }) => {
             </div>
             <div>
                 <Button variant="contained" onClick={output}>Go to output</Button>
+                <Button variant="contained" onClick={shuffle}>Shuffle</Button>
 
             </div>
 
