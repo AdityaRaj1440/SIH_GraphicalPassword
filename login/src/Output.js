@@ -1,11 +1,27 @@
-import ImageGrid from './ImageGrid';
 import { useState } from 'react';
 import './App.css';
 import * as React from 'react';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
+import Button from '@mui/material/Button';
+import { useNavigate } from 'react-router-dom';
 
 const Output = ({ selectedImg, setSelectedImg} ) => {
+    const navigate = useNavigate()
+    const shuffle = () => {
+        let shuffArr = selectedImg
+        shuffArr = shuffArr.sort(() => Math.random() - 0.5)
+        setSelectedImg(shuffArr)
+        console.log(shuffArr)
+    }
+
+    const submit = () => {
+        let lis = []
+        setSelectedImg(lis)
+        return (
+            navigate("/")
+        )
+    }
 
     return (
         <div className="App">
@@ -30,6 +46,10 @@ const Output = ({ selectedImg, setSelectedImg} ) => {
                     </ImageListItem>
                 ))}
             </ImageList>
+            </div>
+            <div>
+                <Button variant="contained" onClick={shuffle}>Shuffle</Button>
+                <Button variant="contained" onClick={submit}>Reset to Login</Button>
             </div>
         </div>
     );

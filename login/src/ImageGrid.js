@@ -37,7 +37,7 @@ const ImageGrid = ({ selectedImg, setSelectedImg}) => {
     }
     const output = () => {
         if (status <= 6) {
-            alert("You didn't select enough images")
+            alert("You didn't select enough images for output")
         } else {
             return (
                 navigate("/output")
@@ -119,7 +119,8 @@ const ImageGrid = ({ selectedImg, setSelectedImg}) => {
             </ImageList>
             </div>
             <div>
-            <Button variant="contained" onClick={output}>Previous</Button>
+            <Button variant="contained" onClick={output}>Go to output</Button>
+
             </div>
 
         </div>
