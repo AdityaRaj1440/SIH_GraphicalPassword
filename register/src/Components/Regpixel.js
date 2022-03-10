@@ -1,7 +1,7 @@
 /* global SimpleImage */
 
 import React from 'react'
-import {  arr } from './Image'
+import { arr } from './Image'
 import { useState } from 'react'
 import { decoy } from './FinalizePassword'
 
@@ -53,10 +53,11 @@ function Regpixel() {
                 var w = image.getWidth()
                 var h = image.getHeight()
                 var low = 60
+                var high = 40
                 var hx = parseInt(w / low)
-                var hy = parseInt(h / low)
+                var hy = parseInt(h / high)
                 var gx = parseInt(x / low)
-                var gy = parseInt(y / low)
+                var gy = parseInt(y / high)
                 array[0] = hx
                 array[1] = hy
                 if (gx >= hx)
@@ -71,7 +72,7 @@ function Regpixel() {
                 var sum = 0
 
                 for (var i = gx * low - 1; i < gx * low + low - 1; i++)
-                    for (var j = gy * low - 1; j < gy * low + low - 1; j++) {
+                    for (var j = gy * high - 1; j < gy * high + high - 1; j++) {
                         var pixel = image.getPixel(i, j)
 
                         sum += pixel.getRed()
@@ -172,8 +173,9 @@ function Regpixel() {
                 console.log("here width", w)
                 console.log("here height", h)
                 var low = 60
+                var high = 40
                 var hx = parseInt(w / low)
-                var hy = parseInt(h / low)
+                var hy = parseInt(h / high)
                 console.log("groups given: ", x, y)
                 console.log("maxes given: ", arrGroups[0], arrGroups[1])
                 var gx = Math.ceil(x * (hx / arrGroups[0]))
@@ -193,7 +195,7 @@ function Regpixel() {
 
                 var sum = 0
                 for (var i = gx * low - 1; i < gx * low + low - 1; i++)
-                    for (var j = gy * low - 1; j < gy * low + low - 1; j++) {
+                    for (var j = gy * high - 1; j < gy * high + high - 1; j++) {
                         var pixel = image.getPixel(i, j)
                         sum += pixel.getRed()
                         sum += pixel.getGreen()
@@ -240,16 +242,16 @@ function Regpixel() {
                 fontSize: "20px"
             }}>
                 <h1>Password Validation</h1>
-                <br/>
-              <h2>Your selected sequence of images</h2>  
+                <br />
+                <h2>Your selected sequence of images</h2>
             </div>
 
             <center>
-            <img id="i1" alt="image1" width="15%" src={`${oarr[0]}`} class="verify" />
-            <img id="i2" alt="image2" width="15%" src={`${oarr[1]}`} class="verify" />
-            <img id="i3" alt="image3" width="15%" src={`${oarr[2]}`} class="verify" />
-            <img id="i4" alt="image4" width="15%" src={`${oarr[3]}`} class="verify" />
-            <img id="i5" alt="image5" width="15%" src={`${oarr[4]}`} class="verify" />
+                <img id="i1" alt="image1" width="15%" src={`${oarr[0]}`} class="verify" />
+                <img id="i2" alt="image2" width="15%" src={`${oarr[1]}`} class="verify" />
+                <img id="i3" alt="image3" width="15%" src={`${oarr[2]}`} class="verify" />
+                <img id="i4" alt="image4" width="15%" src={`${oarr[3]}`} class="verify" />
+                <img id="i5" alt="image5" width="15%" src={`${oarr[4]}`} class="verify" />
             </center>
 
             <div style={{
@@ -268,14 +270,14 @@ function Regpixel() {
 
                     }}>Click 4 times to select positions on Primary Image</button>
                 }
-                <br/><br/>
+                <br /><br />
                 {
-                    !show ? <></> : <><img id="prime" alt="image1" width="30%" src={`${arr[0]}`} class="verify"/>
-                                      <h4>Click 4 times to select positions</h4></>
+                    !show ? <></> : <><img id="prime" alt="image1" width="30%" src={`${arr[0]}`} class="verify" />
+                        <h4>Click 4 times to select positions</h4></>
                 }
                 <div>
                     {!btn2 ? <></> :
-                        <button id= "positionVerify" onClick={() => {
+                        <button id="positionVerify" onClick={() => {
 
                             setTimeout(() => {
                                 setBtn2(false)
