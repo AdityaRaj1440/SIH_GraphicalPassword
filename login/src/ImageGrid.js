@@ -57,17 +57,27 @@ const ImageGrid = ({ selectedImg, setSelectedImg }) => {
         console.log(itemData.slice(index, index + 5))
     }
     const addImage = (item) => {
-        const inc = status + 1
-        setStatus(inc)
-        if (inc > 6) {
-            alert("Can't select more than 5 images")
+        if (selectedImg.includes(item)) {
+            let tempchange = selectedImg
+            //tempchange.splice(item, 1)
+            tempchange = tempchange.filter(value => value !== item)
+            setSelectedImg(tempchange)
+            const inc = status - 1
+            setStatus(inc)
         }
         else {
-            let tempchange = selectedImg
-            tempchange.push(item)
-            console.log(status + item.title + " selected")
-            setSelectedImg(tempchange)
-            console.log(selectedImg)
+            const inc = status + 1
+            setStatus(inc)
+            if (inc > 6) {
+                alert("Can't select more than 5 images")
+            }
+            else {
+                let tempchange = selectedImg
+                tempchange.push(item)
+                console.log(status + item.title + " selected")
+                setSelectedImg(tempchange)
+                console.log(selectedImg)
+            }
         }
     }
 
@@ -99,7 +109,7 @@ const ImageGrid = ({ selectedImg, setSelectedImg }) => {
                 ))}
             </ImageList>
             {console.log(selectedImg)}
-            
+
             <div>
                 <Button variant="contained" onClick={prev}>Previous</Button>
                 <Button variant="contained" onClick={next}>Next</Button>
