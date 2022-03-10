@@ -6,13 +6,14 @@ import ImageListItem from '@mui/material/ImageListItem';
 import Button from '@mui/material/Button';
 import { useNavigate } from 'react-router-dom';
 
-const Output = ({ selectedImg, setSelectedImg} ) => {
+const Output = ({ selectedImg, setSelectedImg }) => {
     const navigate = useNavigate()
     const shuffle = () => {
         let shuffArr = selectedImg
         shuffArr = shuffArr.sort(() => Math.random() - 0.5)
         setSelectedImg(shuffArr)
-        console.log(shuffArr)
+        // console.log(shuffArr)
+        console.log(selectedImg)
     }
 
     const submit = () => {
@@ -26,26 +27,26 @@ const Output = ({ selectedImg, setSelectedImg} ) => {
     return (
         <div className="App">
             <div>
-            <ImageList sx={{
-                width: 1000,
-                height: 200
-            }}
-                cols={5}
-                rowHeight={4}
-            >
-                {selectedImg.map((item) => (
-                    <ImageListItem key={item.img}>
-                        <img
-                            // className={index === selected ? "selected" : ""}
-                            src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
-                            srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-                            alt={item.title}
-                            loading="lazy"
-                            
-                        />
-                    </ImageListItem>
-                ))}
-            </ImageList>
+                <ImageList sx={{
+                    width: 1000,
+                    height: 200
+                }}
+                    cols={5}
+                    rowHeight={4}
+                >
+                    {selectedImg.map((item) => (
+                        <ImageListItem key={item.img}>
+                            <img
+                                // className={index === selected ? "selected" : ""}
+                                src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
+                                srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+                                alt={item.title}
+                                loading="lazy"
+
+                            />
+                        </ImageListItem>
+                    ))}
+                </ImageList>
             </div>
             <div>
                 <Button variant="contained" onClick={shuffle}>Shuffle</Button>
@@ -54,5 +55,5 @@ const Output = ({ selectedImg, setSelectedImg} ) => {
         </div>
     );
 }
- 
+
 export default Output;

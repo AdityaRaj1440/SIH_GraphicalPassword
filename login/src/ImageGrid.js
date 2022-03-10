@@ -10,15 +10,17 @@ import { useEffect, useState } from 'react';
 import { SettingsInputAntenna } from '@mui/icons-material';
 
 
-const ImageGrid = ({ selectedImg, setSelectedImg}) => {
+const ImageGrid = ({ selectedImg, setSelectedImg }) => {
     let lis = itemData.slice(0, 5)
     const [index, setIndex] = useState(0);
     const [status, setStatus] = useState(1)
     const [selection, setSelection] = useState(lis)
-    
+
     const navigate = useNavigate()
 
     const submit = () => {
+        let lis = []
+        setSelectedImg(lis)
         return (
             navigate("/")
         )
@@ -36,7 +38,7 @@ const ImageGrid = ({ selectedImg, setSelectedImg}) => {
 
     }
     const output = () => {
-        if (status <= 6) {
+        if (status < 6) {
             alert("You didn't select enough images for output")
         } else {
             return (
@@ -73,7 +75,7 @@ const ImageGrid = ({ selectedImg, setSelectedImg}) => {
         <div className="App">
             <ImageList sx={{
                 width: 1000,
-                height: 200
+                height: 230
             }}
                 cols={5}
                 rowHeight={4}
@@ -81,7 +83,7 @@ const ImageGrid = ({ selectedImg, setSelectedImg}) => {
                 {selection.map((item) => (
                     <ImageListItem key={item.img}>
                         <img
-                            // className={index === selected ? "selected" : ""}
+                            className="selected"
                             src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
                             srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
                             alt={item.title}
@@ -97,34 +99,34 @@ const ImageGrid = ({ selectedImg, setSelectedImg}) => {
                 <Button variant="contained" onClick={submit}>Reset to Login</Button>
             </div>
             <div>
-            <ImageList sx={{
-                width: 1000,
-                height: 200
-            }}
-                cols={5}
-                rowHeight={4}
-            >
-                {selectedImg.map((item) => (
-                    <ImageListItem key={item.img}>
-                        <img
-                            // className={index === selected ? "selected" : ""}
-                            src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
-                            srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-                            alt={item.title}
-                            loading="lazy"
-                            
-                        />
-                    </ImageListItem>
-                ))}
-            </ImageList>
+                <ImageList sx={{
+                    width: 1000,
+                    height: 200
+                }}
+                    cols={5}
+                    rowHeight={4}
+                >
+                    {selectedImg.map((item) => (
+                        <ImageListItem key={item.img}>
+                            <img
+                                // className={index === selected ? "selected" : ""}
+                                src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
+                                srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+                                alt={item.title}
+                                loading="lazy"
+
+                            />
+                        </ImageListItem>
+                    ))}
+                </ImageList>
             </div>
             <div>
-            <Button variant="contained" onClick={output}>Go to output</Button>
+                <Button variant="contained" onClick={output}>Go to output</Button>
 
             </div>
 
         </div>
-        
+
 
     );
 }
