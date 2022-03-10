@@ -40,7 +40,7 @@ const FinalizePassword = ({ fn }) => {
         for (let i = 0; i < key.length; i++) 
         {
             const newArr = URL[key[i]].filter((item) => !arr.includes(item))
-            for (let j = 0; j < 6; j++) {
+            for (let j = 0; j < 5; j++) {
                 const n = (Math.floor(Math.random() * 50)) % newArr.length
                 if (!decoy.includes(newArr[n]))
                     decoy.push(newArr[n])

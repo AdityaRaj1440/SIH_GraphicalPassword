@@ -275,7 +275,7 @@ function Regpixel() {
                 }
                 <div>
                     {!btn2 ? <></> :
-                        <button onClick={() => {
+                        <button id= "positionVerify" onClick={() => {
 
                             setTimeout(() => {
                                 setBtn2(false)
