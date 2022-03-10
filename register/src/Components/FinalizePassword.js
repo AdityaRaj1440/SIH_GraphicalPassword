@@ -84,8 +84,9 @@ const FinalizePassword = ({ fn }) => {
     return (
         <>
         <center>
-            <button onClick={gotarr}>Finalize Password</button>
+            <button onClick={gotarr} id="final">Finalize Password</button>
             </center>
+            <br/><br/>
         </>
     )
 }

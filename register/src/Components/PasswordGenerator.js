@@ -6,9 +6,9 @@ const PasswordGenerator = ({ fn }) => {
 
     return (
         <>
-            <div>
-                <h3>Password Generator</h3>
-                <h4>Choose 5 images.</h4>
+            <div align= "center"> 
+                <h2>Password Generator</h2>
+                <h3>Choose 5 images.</h3>
                 <CatImage cat="Movies" />
                 <br /><br />
                 <CatImage cat="Series" />

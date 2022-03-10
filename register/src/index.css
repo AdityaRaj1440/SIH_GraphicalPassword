@@ -7,19 +7,64 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
+hr {
+  size: 20px;
+  border-top: 3px dashed gray;
+}
+
+#final {
+  width: 60%;
+  height: 40px;
+  font-size: large;
+  padding: 10px 10px;
+  color: white;
+  background-color: black;
+  border-radius: 10px;
+}
+
+#Title {
+  background-color: rgb(182, 182, 240);
+  border: 1px solid blue;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  vertical-align: middle;
+}
+
+.cat {
+  background-color: rgb(145, 193, 199); 
+  border-radius: 5px;
+  display: block;
+  width: 50%;
+  font-size: 20px;
+
+}
+
+.more {
+  background-color:rgb(152, 207, 138); 
+  border-radius: 5px;
+  display: block;
+  width: 40%;
+  font-size: 20px;
+}
+
+input[type=text] {
+  width: 80%;
+  height: 15px;
+}
+
 .column {
   float: left;
-  width: 15%;
+  width: 30%;
 }
 
 .column2 {
   float: left;
-  width: 50%;
+  width: 70%;
 }
 
 .row:after {
@@ -33,8 +78,8 @@ code {
   height: 150px;
 }
 
-.imgSelected{border: 2px solid greenyellow;
-  box-shadow: 0px 10px lightblue;
+.imgSelected{border: 2px solid darkblue;
+  box-shadow: 0px 10px rgb(120, 120, 196);
   transition: 1s;
   transform: scale(1.05);
   

@@ -72,7 +72,7 @@ const Image = ({ url }) => {
     return (
         <>
 
-            <img src={url} alt="img1" width="15%" height="15%" onClick={addImage} class= "img" id= {url} />
+            <img src={url} alt="img1"  width="15%" onClick={addImage} class= "img" id= {url} />
             &nbsp;&nbsp;
             {/* {restImage()}
           {console.log("decoy length:",decoy)} */}

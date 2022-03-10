@@ -5,8 +5,8 @@ import TextForm from './ColForm'
 function Register({ fn }) {
     return (
         <>
-            <h1><center><u>User Registration</u></center></h1>
-
+            <div id= "Title"><h1><center><u>User Registration</u></center></h1></div>
+            <br/><br/>
             <TextForm />
             <PasswordGenerator fn={fn} />
 

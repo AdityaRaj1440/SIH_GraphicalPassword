@@ -39,7 +39,8 @@ const changeImgList = () => {
     <>
       <center>
       {/* <h3 align="center">{cat}</h3> */}
-      <button type="button" onClick={()=>setShow(!show)}>{cat}</button>
+      <button type="button" onClick={()=>setShow(!show)} class="cat">{cat}</button>
+      <br/>
       {!show? <></>:
       
       <div>
@@ -52,10 +53,12 @@ const changeImgList = () => {
         <Image url={URL[(src + 4) % len]} />
         <Image url={URL[(src + 5) % len]} />
       
-      
-        <button type="button" onClick={changeImgList}>Show More</button>
+        <br/><br/>
+        <button type="button" onClick={changeImgList} class="more">Show More</button>
       </div>
       }
+              <br/><hr/>
+
       
       </center>
 
