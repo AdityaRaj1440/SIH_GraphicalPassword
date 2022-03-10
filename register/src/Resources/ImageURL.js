@@ -2,7 +2,8 @@ const url = {
     Movies: [
         "https://i.imgur.com/Ncp9k3n.jpeg",
         "https://i.imgur.com/4zSAWJ5b.jpg",
-        "https://wallpaperaccess.com/thumb/2529480.jpg",
+        "https://i.imgur.com/mjZUaWm.jpg",
+        "https://i.imgur.com/1zKkceA.jpg",
         "https://wallpaperaccess.com/thumb/1561410.jpg",
         "https://wallpaperaccess.com/thumb/752713.jpg",
         "https://wallpaperaccess.com/thumb/2316845.jpg",
@@ -15,8 +16,8 @@ const url = {
         "https://wallpaperaccess.com/thumb/1263881.jpg",
         "https://wallpaperaccess.com/thumb/13453.jpg",
         "https://wallpaperaccess.com/thumb/436209.jpg",
-        "https://wallpaperaccess.com/thumb/4318306.jpg",
-        "https://wallpaperaccess.com/thumb/1227117.jpg"
+        "https://wallpaperaccess.com/thumb/4318306.jpg"
+
     ],
 
     Series: [
