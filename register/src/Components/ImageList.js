@@ -7,6 +7,7 @@ const CatImage = ({ cat }) => {
   const len = url[cat].length
   const URL = url[cat]
   const [src, setSrc] = useState(0)
+  const [show, setShow]= useState(false)
 
   useEffect(()=>{
     let elements = document.getElementsByTagName("img")
@@ -36,8 +37,13 @@ const changeImgList = () => {
 
   return (
     <>
-      <h3 align="center">{cat}</h3>
+      <center>
+      {/* <h3 align="center">{cat}</h3> */}
+      <button type="button" onClick={()=>setShow(!show)}>{cat}</button>
+      {!show? <></>:
+      
       <div>
+        
         &nbsp;&nbsp;&nbsp;&nbsp;
         <Image url={URL[src % len]} />
         <Image url={URL[(src + 1) % len]} />
@@ -45,10 +51,13 @@ const changeImgList = () => {
         <Image url={URL[(src + 3) % len]} />
         <Image url={URL[(src + 4) % len]} />
         <Image url={URL[(src + 5) % len]} />
-      </div>
-      <div align="CENTER">
+      
+      
         <button type="button" onClick={changeImgList}>Show More</button>
       </div>
+      }
+      
+      </center>
 
     </>
   )

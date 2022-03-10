@@ -1,8 +1,9 @@
 /* global SimpleImage */
 
 import React from 'react'
-import { decoy, arr } from './Image'
+import {  arr } from './Image'
 import { useState } from 'react'
+import { decoy } from './FinalizePassword'
 
 
 var arrG = []
