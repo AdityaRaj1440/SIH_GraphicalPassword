@@ -42,7 +42,7 @@ const Output = ({ selectedImg, setSelectedImg }) => {
             else {
                 let tempchange = final
                 tempchange.push(item)
-                console.log(status + item.title + " selected")
+                console.log(status + item + " selected")
                 setFinal(tempchange)
                 console.log(final)
             }
@@ -59,12 +59,11 @@ const Output = ({ selectedImg, setSelectedImg }) => {
                 rowHeight={4}
             >
                 {selectedImg.map((item) => (
-                    <ImageListItem key={item.img}>
+                    <ImageListItem key={item}>
                         <img
                             className="selected"
-                            src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
-                            srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-                            alt={item.title}
+                            src={`${item}?w=164&h=164&fit=crop&auto=format`}
+                            srcSet={`${item}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
                             loading="lazy"
                             onClick={() => addImage(item)}
                         />
