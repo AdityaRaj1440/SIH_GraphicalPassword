@@ -116,23 +116,23 @@ const ImageGrid = ({ selectedImg, setSelectedImg }) => {
 
             <div>
                 <Button style={{
-                    margin:15
+                    margin:10
                 }}
                 variant="contained" onClick={prev}>Previous</Button>
                 <Button style={{
-                    margin:15
+                    margin:10
                 }}
                 variant="contained" onClick={next}>Next</Button>
                 <Button style={{
-                    margin:15
+                    margin:10
                 }}
                 variant="contained" onClick={submit}>Reset to Login</Button>
                 <Button style={{
-                    margin:15
+                    margin:10
                 }}
                 variant="contained" onClick={output}>Go to output</Button>
                 <Button style={{
-                    margin:15
+                    margin:10
                 }}
                 variant="contained" onClick={reset}>Reset elements</Button>
             </div>
