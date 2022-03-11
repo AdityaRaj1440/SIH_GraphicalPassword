@@ -3,31 +3,46 @@ import React from "react";
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { useNavigate } from "react-router-dom";
+import baseUrl from '../Resources/BaseURL'
+import axios from 'axios'
+import { ContactlessOutlined } from "@mui/icons-material";
 
-
-const Login = () => {
+const Login = ({ fn }) => {
     const [username, setUsername] = useState("")
     const navigate = useNavigate();
 
-    const submit = () => {
-        console.log(username)
-        navigate("/imageSelection")
+    const submit = async () => {
+
+
+
+        try {
+            let res = await axios.post(`${baseUrl}/user/images`, { username: username })
+            console.log(res.data)
+            fn(res.data)
+            navigate("/imageSelection")
+
+        } catch (err) {
+            console.log(err)
+            alert("invalid username ")
+        }
+
+
     }
 
     return (
         <div className="App">
             <h1>LOGIN</h1>
             <h1>Enter your username:</h1>
-            <TextField 
-            id="outlined-basic" label="Username" variant="outlined" type="text"
+            <TextField
+                id="outlined-basic" label="Username" variant="outlined" type="text"
                 onChange={(e) => {
                     setUsername(e.target.value)
                 }} />
-           
+
             <Button style={{
-                margin:15
+                margin: 15
             }}
-            variant="contained" onClick={submit}>Submit</Button>
+                variant="contained" onClick={submit}>Submit</Button>
         </div>
     );
 }

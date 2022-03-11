@@ -17,6 +17,7 @@ var k = 0;
 var arrayForEncrypt = []
 function Regpixel({ user }) {
 
+    //import baseUrl from '../Resources/BaseURL'
     // axios.get(`${baseUrl}/user`)
     //     .then(res => console.log("res from server:", res))
     //     .catch(err => console.log(err))
