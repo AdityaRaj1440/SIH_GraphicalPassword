@@ -7,29 +7,41 @@ import Button from '@mui/material/Button';
 import { useEffect, useState } from 'react';
 import Grid from './Grid';
 
-let element
+
+//let element
 const ImageGrid = ({ selectedImg, setSelectedImg }) => {
     let lis = itemData.slice(0, 5)
     const [index, setIndex] = useState(0);
     const [status, setStatus] = useState(1)
     const [selection, setSelection] = useState(lis)
 
-    // useEffect(()=>{
-    //     let elements = document.getElementsByTagName("img")
-    //     for(let i=0; i<elements.length; i++)
-    //     {
+    useEffect(()=>{
+        
+        let arr= []
+        for(let i=0; i<selectedImg.length; i++)
+        {
+            arr.push(selectedImg[i].img)
+        }
+
+        let elements = document.getElementsByTagName("img")
+        console.log("first: ",elements[0].getAttribute("src"))
+        if(arr.includes(String(elements[0].getAttribute("src"))))
+        console.log("guess what")
+        console.log("img:",arr)
+        console.log(elements[0].getAttribute("src"))
+        for(let i=0; i<elements.length; i++)
+        {
+              if(!arr.includes(elements[i].getAttribute("src").slice(0,elements[i].getAttribute("src").indexOf('?')))&&elements[i].classList.contains("imgSelected"))
+              {
+                  elements[i].classList.remove("imgSelected")
+              }
+              else if(arr.includes(elements[i].getAttribute("src").slice(0,elements[i].getAttribute("src").indexOf('?')))&&!elements[i].classList.contains("imgSelected"))
+              {
+                elements[i].classList.add("imgSelected")
+              }
           
-    //           if(!selection.includes(elements[i].id)&&elements[i].classList.contains("imgSelected"))
-    //           {
-    //               elements[i].classList.remove("imgSelected")
-    //           }
-    //           else if(selection.includes(elements[i].id)&&!elements[i].classList.contains("imgSelected"))
-    //           {
-    //             elements[i].classList.add("imgSelected")
-    //           }
-          
-    //     }
-    //   })
+        }
+      })
     
 
     const navigate = useNavigate()
@@ -75,8 +87,28 @@ const ImageGrid = ({ selectedImg, setSelectedImg }) => {
         console.log(itemData.slice(index, index + 5))
     }
     const addImage = (item) => {
+
+        
+        let elements = document.getElementsByTagName("img")
+        let element= elements[1]
+        let index=-1
+        for(let i=0; i<elements.length; i++)
+         { 
+             //console.log("got it:", element.getAttribute("src").slice(0,element.getAttribute("src").indexOf('?'))==item.img)
+            // if(elements[i].getAttribute("src").slice(0,element.getAttribute("src").indexOf('?'))==item.img)
+            // {
+            //     console.log("got it")
+            //   element= elements[i]
+            //   console.log(element)
+            // }
+        }
         // element= document.getElementById(item.img)
         if (selectedImg.includes(item)) {
+
+            // if(element.classList.contains("imgSelected"))
+            //   {
+            //     element.classList.remove("imgSelected")
+            //   }
             let tempchange = selectedImg
             // element.classList.remove("imgSelected")
             //tempchange.splice(item, 1)
@@ -92,6 +124,10 @@ const ImageGrid = ({ selectedImg, setSelectedImg }) => {
                 alert("Can't select more than 5 images")
             }
             else {
+            //     if(!element.classList.contains("imgSelected"))
+            //   {
+            //     element.classList.add("imgSelected")
+            //   }
                 // element.classList.add("imgSelected");
                 let tempchange = selectedImg
                 tempchange.push(item)

@@ -29,6 +29,7 @@
 .imgSelected{border: 2px solid darkblue;
   box-shadow: 0px 10px rgb(120, 120, 196);
   transition: 1s;
+  opacity: 0.2;
   transform: scale(1.05);
   
 }
