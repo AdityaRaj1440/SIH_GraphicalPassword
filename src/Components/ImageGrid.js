@@ -29,10 +29,10 @@ const ImageGrid = ({ decoy, selectedImg, setSelectedImg, fn }) => {
         console.log("img:", arr)
         console.log(elements[0].getAttribute("src"))
         for (let i = 0; i < elements.length; i++) {
-            if (!arr.includes(elements[i].getAttribute("src").slice(0, elements[i].getAttribute("src").indexOf('?'))) && elements[i].classList.contains("imgSelected")) {
+            if (!arr.includes(elements[i].getAttribute("src").slice(0, elements[i].getAttribute("src").indexOf('?'))) && elements[i].classList.contains("imgSelected1")) {
                 elements[i].classList.remove("imgSelected1")
             }
-            else if (arr.includes(elements[i].getAttribute("src").slice(0, elements[i].getAttribute("src").indexOf('?'))) && !elements[i].classList.contains("imgSelected")) {
+            else if (arr.includes(elements[i].getAttribute("src").slice(0, elements[i].getAttribute("src").indexOf('?'))) && !elements[i].classList.contains("imgSelected1")) {
                 elements[i].classList.add("imgSelected1")
             }
 
