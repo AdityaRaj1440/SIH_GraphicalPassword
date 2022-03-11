@@ -280,7 +280,7 @@ function Regpixel({ user }) {
                 textAlign: "center",
                 fontSize: "20px"
             }}>
-                <h1>Password Validation</h1>
+                <h1><u>Password Validation</u></h1>
                 <br />
                 <h2>Your selected sequence of images</h2>
             </div>
@@ -307,7 +307,7 @@ function Regpixel({ user }) {
                             setBtn(false)
                         }, 400);
 
-                    }}>Click 4 times to select positions on Primary Image</button>
+                    }}>Click here to expand the primary image</button>
                 }
                 <br /><br />
                 {

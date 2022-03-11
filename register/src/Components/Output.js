@@ -6,14 +6,28 @@ import { useNavigate } from 'react-router-dom';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import Grid from './Grid';
+let elements= document.getElementsByTagName("img")
 
 const Output = ({ selectedImg, setSelectedImg }) => {
+
+     useEffect(()=>{
+         
+        if(status== 1)
+        {
+            console.log("Hola")
+            console.log(elements[0].classList)
+            for(let i=0; i<elements.length; i++)
+            {
+                console.log("Hello there")
+                elements[i].classList.remove("outputImg1")
+            }
+        }
+        })
 
     const [status, setStatus] = useState(1)
     const [final, setFinal] = useState([])
 
     const navigate = useNavigate()
-
 
     const submit = () => {
         let lis = []
@@ -25,9 +39,11 @@ const Output = ({ selectedImg, setSelectedImg }) => {
     }
 
     const reset = () => {
+       
         setStatus(1)
         setFinal([])
     }
+    
     const addImage = (item) => {
         if (final.includes(item)) {
             alert("You've already selected this image!")
@@ -40,6 +56,15 @@ const Output = ({ selectedImg, setSelectedImg }) => {
                 alert("Can't select more than 5 images")
             }
             else {
+                let elements= document.getElementsByTagName("img")
+                for(let i=0; i<elements.length; i++)
+                {
+                    if(elements[i].getAttribute("src").slice(0,elements[i].getAttribute("src").indexOf("?"))==item)
+                    {
+                        elements[i].classList.add("outputImg1")
+                    }
+                }
+
                 let tempchange = final
                 tempchange.push(item)
                 console.log(status + item + " selected")
@@ -50,6 +75,8 @@ const Output = ({ selectedImg, setSelectedImg }) => {
     }
 
     return (
+        <>
+        <h1 align="center">Sequentialize the images</h1>
         <div className="App">
             <ImageList sx={{
                 width: 1000,
@@ -87,6 +114,7 @@ const Output = ({ selectedImg, setSelectedImg }) => {
                 
             </div>
         </div>
+        </>
     );
 }
 

@@ -34,4 +34,13 @@
   
 }
 
+.outputImg1 {
+  opacity: 0;
+}
+
+.op {
+  border: 2px solid black;
+  padding: 10px;
+}
+
 

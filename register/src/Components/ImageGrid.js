@@ -121,6 +121,8 @@ const ImageGrid = ({ selectedImg, setSelectedImg }) => {
         setStatus(1)
     }
     return (
+        <>
+        <h1 align="center">Choose the 5 images you use as your passoword</h1>
         <div className="App">
             <ImageList sx={{
                 width: 1000,
@@ -173,7 +175,7 @@ const ImageGrid = ({ selectedImg, setSelectedImg }) => {
 
         </div>
 
-
+        </>
     );
 }
 
