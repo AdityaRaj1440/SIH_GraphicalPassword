@@ -30,8 +30,8 @@ const Output = ({ selectedImg, setSelectedImg }) => {
             <Grid selectedImg={selectedImg} />
             
             <div>
-                <Button variant="contained" onClick={shufflestupid}>Shuffle</Button>
                 <Button variant="contained" onClick={submit}>Reset to Login</Button>
+                <Button variant="contained" >Log in</Button>
                 
             </div>
         </div>

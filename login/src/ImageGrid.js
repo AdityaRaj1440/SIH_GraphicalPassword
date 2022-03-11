@@ -39,6 +39,10 @@ const ImageGrid = ({ selectedImg, setSelectedImg }) => {
         if (status < 6) {
             alert("You didn't select enough images for output")
         } else {
+            let shuffArr = selectedImg.slice()
+            shuffArr = shuffArr.sort(() => Math.random() - 0.5)
+            setSelectedImg(shuffArr)
+            console.log(selectedImg)
             return (
                 navigate("/output")
             )
@@ -111,14 +115,30 @@ const ImageGrid = ({ selectedImg, setSelectedImg }) => {
             {console.log(selectedImg)}
 
             <div>
-                <Button variant="contained" onClick={prev}>Previous</Button>
-                <Button variant="contained" onClick={next}>Next</Button>
-                <Button variant="contained" onClick={submit}>Reset to Login</Button>
+                <Button style={{
+                    margin:15
+                }}
+                variant="contained" onClick={prev}>Previous</Button>
+                <Button style={{
+                    margin:15
+                }}
+                variant="contained" onClick={next}>Next</Button>
+                <Button style={{
+                    margin:15
+                }}
+                variant="contained" onClick={submit}>Reset to Login</Button>
+                <Button style={{
+                    margin:15
+                }}
+                variant="contained" onClick={output}>Go to output</Button>
+                <Button style={{
+                    margin:15
+                }}
+                variant="contained" onClick={reset}>Reset elements</Button>
             </div>
-            <Grid selectedImg={selectedImg} />
+            
             <div>
-                <Button variant="contained" onClick={output}>Go to output</Button>
-                <Button variant="contained" onClick={reset}>Reset elements</Button>
+                
 
             </div>
 
