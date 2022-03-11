@@ -9,22 +9,22 @@ const CatImage = ({ cat }) => {
   const [src, setSrc] = useState(0)
   const [show, setShow]= useState(false)
 
-  // useEffect(()=>{
-  //   let elements = document.getElementsByTagName("img")
-  //   for(let i=0; i<elements.length; i++)
-  //   {
+  useEffect(()=>{
+    let elements = document.getElementsByTagName("img")
+    for(let i=0; i<elements.length; i++)
+    {
       
-  //         if(!arr.includes(elements[i].id)&&elements[i].classList.contains("imgSelected"))
-  //         {
-  //             elements[i].classList.remove("imgSelected")
-  //         }
-  //         else if(arr.includes(elements[i].id)&&!elements[i].classList.contains("imgSelected"))
-  //         {
-  //           elements[i].classList.add("imgSelected")
-  //         }
+          if(!arr.includes(elements[i].id)&&elements[i].classList.contains("imgSelected"))
+          {
+              elements[i].classList.remove("imgSelected")
+          }
+          else if(arr.includes(elements[i].id)&&!elements[i].classList.contains("imgSelected"))
+          {
+            elements[i].classList.add("imgSelected")
+          }
       
-  //   }
-  // })
+    }
+  })
 
 const changeImgList = () => {
   setSrc(src + 6)
