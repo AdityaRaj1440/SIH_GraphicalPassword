@@ -7,7 +7,7 @@ import baseUrl from '../Resources/BaseURL'
 import axios from 'axios'
 import { ContactlessOutlined } from "@mui/icons-material";
 
-const Login = ({ fn }) => {
+const Login = ({ fn, fname }) => {
     const [username, setUsername] = useState("")
     const navigate = useNavigate();
 
@@ -16,6 +16,7 @@ const Login = ({ fn }) => {
 
 
         try {
+            fname(username)
             let res = await axios.post(`${baseUrl}/user/images`, { username: username })
             //console.log(res.data)
             fn(res.data)
@@ -30,7 +31,9 @@ const Login = ({ fn }) => {
     }
 
     return (
-        <div className="App">
+        <div className="App" style={{
+            padding: "200px"
+        }}>
             <h1>LOGIN</h1>
             <h1>Enter your username:</h1>
             <TextField

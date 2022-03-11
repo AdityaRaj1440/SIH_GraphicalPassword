@@ -59,8 +59,8 @@ function Regpixel({ user }) {
                 const image = new SimpleImage(dimg);
                 var w = image.getWidth()
                 var h = image.getHeight()
-                var low = 60
-                var high = 40
+                var low = 120
+                var high = 80
                 var hx = parseInt(w / low)
                 var hy = parseInt(h / high)
                 var gx = parseInt(x / low)
@@ -185,8 +185,8 @@ function Regpixel({ user }) {
                 var h = image.getHeight()
                 console.log("here width", w)
                 console.log("here height", h)
-                var low = 60
-                var high = 40
+                var low = 120
+                var high = 80
                 var hx = parseInt(w / low)
                 var hy = parseInt(h / high)
                 console.log("groups given: ", x, y)
@@ -312,7 +312,7 @@ function Regpixel({ user }) {
                 }
                 <br /><br />
                 {
-                    !show ? <></> : <><img id="prime" alt="image1" width="30%" src={`${arr[0]}`} class="verify" />
+                    !show ? <></> : <><img id="prime" alt="image1" src={`${arr[0]}`} class="verify" />
                         <h4>Click 4 times to select positions</h4></>
                 }
                 <div>
