@@ -17,7 +17,7 @@ const Login = ({ fn }) => {
 
         try {
             let res = await axios.post(`${baseUrl}/user/images`, { username: username })
-            console.log(res.data)
+            //console.log(res.data)
             fn(res.data)
             navigate("/imageSelection")
 

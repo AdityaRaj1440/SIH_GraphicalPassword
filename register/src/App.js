@@ -11,11 +11,11 @@ import { useState } from "react"
 const App = () => {
 
   const [gotarr, setGotarr] = useState(false)
-  const [gotseq, setGotseq] = useState(false)
+
   const [user, setUser] = useState("")
   const [selectedImg, setSelectedImg] = useState([]);
   const [decoy, setDecoy] = useState([])
-
+  const [actual, setActual] = useState([])
   return (
     <>
       <Router>
@@ -23,11 +23,11 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/register" element={<Register fn={setGotarr} fnuser={setUser} />} />
           <Route path="/regpixel" element={gotarr ? <Regpixel user={user} /> : <Navigate to='/register' />} />
-          <Route path="/logpixel" element={gotseq ? <Logpixel /> : <Navigate to='/login' />} />
+          <Route path="/logpixel" element={actual.length === 5 ? <Logpixel arr={actual} /> : <Navigate to='/login' />} />
           <Route exact path="/login" element={<Login fn={setDecoy} />} />
-          <Route exact path="/imageSelection" element={decoy.length === 30 ? <ImageGrid arr={decoy}
-            selectedImg={selectedImg} setSelectedImg={setSelectedImg} /> : <></>} />
-          <Route exact path="/output" element={<Output selectedImg={selectedImg} setSelectedImg={setSelectedImg} />} />
+          <Route exact path="/imageSelection" element={decoy.length === 30 ? <ImageGrid decoy={decoy}
+            selectedImg={selectedImg} setSelectedImg={setSelectedImg} /> : <Navigate to="/login" />} />
+          <Route exact path="/output" element={<Output selectedImg={selectedImg} setSelectedImg={setSelectedImg} fn={setActual} />} />
         </Routes>
       </Router>
 

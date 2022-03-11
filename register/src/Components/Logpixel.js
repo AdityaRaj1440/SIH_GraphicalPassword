@@ -1,6 +1,8 @@
 import React from 'react'
 
-function Logpixel() {
+function Logpixel({ arr }) {
+
+    console.log("arauy is :", arr)
     return (
         <div>Logpixel</div>
     )
