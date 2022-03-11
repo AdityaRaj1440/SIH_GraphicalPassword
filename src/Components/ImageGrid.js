@@ -118,7 +118,7 @@ const ImageGrid = ({ decoy, selectedImg, setSelectedImg, fn }) => {
     }
     return (
         <>
-            <h1 align="center">Choose the 5 images you use as your passoword</h1>
+            <h1 align="center">Choose the 5 images you use as your password</h1>
             <div className="App">
                 <ImageList sx={{
                     width: 1000,
