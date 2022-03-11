@@ -24,9 +24,14 @@ const Output = ({ selectedImg, setSelectedImg }) => {
     const submit = () => {
         let lis = []
         setSelectedImg(lis)
+        setFinal([])
         return (
             navigate("/")
         )
+    }
+    const reset = () => {
+        setStatus(1)
+        setFinal([])
     }
     
     const addImage = (item) => {
@@ -90,7 +95,7 @@ const Output = ({ selectedImg, setSelectedImg }) => {
                 <Button style={{
                     margin:10
                 }}
-                variant="contained" onClick={submit}>Re-enter</Button>
+                variant="contained" onClick={reset}>Re-enter</Button>
                 <Button style={{
                     margin:10
                 }}
