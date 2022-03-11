@@ -33,11 +33,11 @@ const ImageGrid = ({ selectedImg, setSelectedImg }) => {
         {
               if(!arr.includes(elements[i].getAttribute("src").slice(0,elements[i].getAttribute("src").indexOf('?')))&&elements[i].classList.contains("imgSelected"))
               {
-                  elements[i].classList.remove("imgSelected")
+                  elements[i].classList.remove("imgSelected1")
               }
               else if(arr.includes(elements[i].getAttribute("src").slice(0,elements[i].getAttribute("src").indexOf('?')))&&!elements[i].classList.contains("imgSelected"))
               {
-                elements[i].classList.add("imgSelected")
+                elements[i].classList.add("imgSelected1")
               }
           
         }

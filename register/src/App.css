@@ -26,7 +26,7 @@
   border: 2px solid black;
 }
 
-.imgSelected{border: 2px solid darkblue;
+.imgSelected1{border: 2px solid darkblue;
   box-shadow: 0px 10px rgb(120, 120, 196);
   transition: 1s;
   opacity: 0.2;
@@ -40,6 +40,7 @@
 
 .op {
   border: 2px solid black;
+  
   padding: 10px;
 }
 
